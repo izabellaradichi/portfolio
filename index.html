@@ -162,6 +162,46 @@
     transition:transform .6s ease;transform-style:preserve-3d;
   }
   .flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+
+  /* ANIMAÇÕES E TRANSIÇÕES */
+  @keyframes fadeInUp {
+    from {opacity:0;transform:translateY(20px);}
+    to {opacity:1;transform:translateY(0);}
+  }
+
+  @keyframes slideInLeft {
+    from {opacity:0;transform:translateX(-20px);}
+    to {opacity:1;transform:translateX(0);}
+  }
+
+  section {animation:fadeInUp .6s ease-out;animation-timeline:view();animation-range:entry 0% cover 30%;}
+
+  .stat-strip .stat{transition:transform .3s ease, color .3s ease;}
+  .stat-strip .stat:hover{transform:translateY(-4px);color:var(--accent-dark);}
+  
+  .article-card{transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;border:1px solid var(--border);}
+  .article-card:hover{transform:translateY(-4px);box-shadow:0 8px 16px rgba(43,33,26,0.12);border-color:var(--accent);}
+  .article-card a{transition:color .3s ease;}
+  .article-card a:hover{color:var(--accent-dark);}
+
+  .tools-tags span{transition:all .3s ease;cursor:default;}
+  .tools-tags span:hover{background:var(--accent-soft);color:var(--accent-dark);transform:scale(1.05);}
+
+  .btn{transition:all .3s ease;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(157,76,30,0.3);}
+  .btn-outline:hover{transform:translateY(-2px);}
+
+  .exp-card{transition:all .3s ease;}
+  .exp-toggle:hover{transition:background .2s ease;}
+
+  nav.navlinks a{transition:all .2s ease;}
+  .brand{transition:color .3s ease;}
+  .brand:hover{color:var(--accent-dark);}
+
+  .back-to-top{transition:opacity .2s ease, transform .2s ease, visibility .2s ease, color .3s ease;}
+
+  .journey-note{transition:all .3s ease;}
+  .journey-note:hover{border-color:var(--accent);box-shadow:0 4px 8px rgba(157,76,30,0.1);}
   .flip-face{
     position:absolute;inset:0;backface-visibility:hidden;
     border-radius:var(--radius);border:1px solid var(--border);
@@ -178,10 +218,6 @@
   .flip-back p{color:var(--text);font-size:0.92rem;font-style:italic;margin:0;text-align:center;}
   @media (prefers-reduced-motion: reduce){
     .flip-card-inner{transition:none;}
-  }
-  .journey-note{
-    margin-top:26px;color:var(--text);font-size:0.95rem;background:var(--accent-soft);
-    border:1px solid #e2cbb0;border-radius:var(--radius);padding:16px 20px;width:100%;
   }
 
   /* EXPERIENCE (timeline unificado) */
@@ -280,15 +316,44 @@
   }
 
   /* ARTICLES */
-  .article-list{display:flex;flex-direction:column;}
-  .article-row{
-    display:flex;justify-content:space-between;align-items:center;gap:16px;
-    padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);
-    font-weight:600;font-size:0.95rem;
+  .article-list{display:flex;flex-direction:column;gap:16px;}
+  
+  .article-card{
+    border:1px solid var(--border);border-radius:var(--radius);padding:20px;
+    background:var(--surface);transition:all .3s ease;
   }
-  .article-row:last-child{border-bottom:none;}
-  .article-row:hover{color:var(--accent-dark);}
-  .article-row .arrow{color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+
+  .article-card h3{
+    margin:0 0 12px;font-size:1.1rem;color:var(--text);
+  }
+
+  .article-card a{
+    text-decoration:none;color:inherit;display:block;transition:color .3s ease;
+  }
+
+  .article-card a:hover{color:var(--accent-dark);}
+
+  .article-meta{
+    display:flex;gap:12px;font-size:0.85rem;color:var(--muted);margin-bottom:12px;flex-wrap:wrap;align-items:center;
+  }
+
+  .platform{
+    background:var(--accent-soft);color:var(--accent-dark);padding:3px 10px;border-radius:4px;font-weight:600;font-size:0.8rem;
+  }
+
+  .reading-time{
+    color:var(--muted);font-size:0.85rem;
+  }
+
+  .article-excerpt{
+    margin:0;color:var(--muted);font-size:0.95rem;line-height:1.6;transition:color .3s ease;
+  }
+
+  .article-card:hover .article-excerpt{color:var(--text);}
+
+  .tools-desc{
+    color:var(--muted);font-size:0.9rem;margin:8px 0 12px;line-height:1.5;
+  }
 
   /* CONTACT */
   .contact-card{
@@ -388,7 +453,7 @@
 <main id="conteudo">
 <section class="hero" id="topo" style="border-top:none;">
   <div class="wrap">
-    <h1>Conversas <span class="accent">que resolvem problemas reais.</span></h1>
+    <h1>Conversas <span class="accent">que resolvem <br>problemas reais.</span></h1>
     <p class="role-line">UX Writer | Designer Conversacional | Chatbots · Belo Horizonte, MG</p>
     <p class="hero-desc">
       15+ anos de trajetória entre atendimento, suporte técnico e produto, unindo visão estratégica de operação
@@ -748,24 +813,28 @@
     <div class="tools-categories">
       <div class="tools-category">
         <h3>Design & fluxos conversacionais</h3>
+        <p class="tools-desc">Prototipagem de fluxos e mapeamento de jornadas</p>
         <div class="tools-tags">
           <span>Figma</span><span>Miro</span><span>Canva</span>
         </div>
       </div>
       <div class="tools-category">
         <h3>Plataformas de chatbot & canais</h3>
+        <p class="tools-desc">Para acompanhar e gerenciar bots</p>
         <div class="tools-tags">
           <span>DialogFlow</span><span>Blip</span><span>WhatsApp Business</span>
         </div>
       </div>
       <div class="tools-category">
         <h3>IA generativa & automação</h3>
+        <p class="tools-desc">Para potencializar com IA</p>
         <div class="tools-tags">
           <span>Google AI Studio</span><span>Gemini</span><span>ChatGPT</span><span>Claude</span><span>n8n</span>
         </div>
       </div>
       <div class="tools-category">
         <h3>Testes & gestão ágil</h3>
+        <p class="tools-desc">Para acompanhar projetos e fazer testes</p>
         <div class="tools-tags">
           <span>Jira</span><span>Postman</span><span>Azure</span>
         </div>
@@ -779,21 +848,65 @@
     <p class="eyebrow-label">Artigos</p>
     <h2 class="section-heading">Escrita sobre UX & conversação</h2>
     <div class="article-list">
-      <a class="article-row" href="https://izabellaradichi.medium.com/chatbots-o-que-est%C3%A1-por-tr%C3%A1s-da-conversa-5bc1850e21ef" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
-        <span>Chatbots: O que está por trás da conversa</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="article-row" href="https://izabellaradichi.medium.com/divirta-se-ff86f002a47b" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
-        <span>"Divirta-se!"</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="article-row" href="https://brasil.uxdesign.cc/consist%C3%AAncia-e-padr%C3%B5es-redefinindo-minha-senha-em-um-banco-digital-618280c0c0c0" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
-        <span>Redefinindo a senha em um banco digital</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="article-row" href="https://izabellaradichi.medium.com/botcamp-letsbot-criando-um-bot-a-partir-de-um-case-real-8ca454c14887" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
-        <span>Botcamp Letsbot: criando um bot a partir de um case real</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="article-row" href="https://www.linkedin.com/posts/izabellaradichi_mandajobs-3dmodel-3dartist-activity-6850122464043814912-1Y4Y/" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
-        <span>Design de aplicativos: prototipagem para iniciantes (Domestika)</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
+      <article class="article-card">
+        <a href="https://izabellaradichi.medium.com/chatbots-o-que-est%C3%A1-por-tr%C3%A1s-da-conversa-5bc1850e21ef" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
+          <h3>Chatbots: O que está por trás da conversa</h3>
+        </a>
+        <div class="article-meta">
+          <span class="platform">Medium</span>
+          <time>Jun 2025</time>
+          <span class="reading-time">7 min</span>
+        </div>
+        <p class="article-excerpt">Explore a estrutura por trás dos chatbots: intents, entities e design conversacional. Entenda a diferença entre UX Writing e Design Conversacional na prática.</p>
+      </article>
+
+      <article class="article-card">
+        <a href="https://izabellaradichi.medium.com/divirta-se-ff86f002a47b" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
+          <h3>"Divirta-se!"</h3>
+        </a>
+        <div class="article-meta">
+          <span class="platform">Medium</span>
+          <time>Ago 2021</time>
+          <span class="reading-time">5 min</span>
+        </div>
+        <p class="article-excerpt">Uma reflexão sobre microcopy e tone of voice em interfaces conversacionais. Como pequenas palavras impactam a experiência do usuário.</p>
+      </article>
+
+      <article class="article-card">
+        <a href="https://brasil.uxdesign.cc/consist%C3%AAncia-e-padr%C3%B5es-redefinindo-minha-senha-em-um-banco-digital-618280c0c0c0" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
+          <h3>Redefinindo a senha em um banco digital</h3>
+        </a>
+        <div class="article-meta">
+          <span class="platform">UX Collective</span>
+          <time>Nov 2021</time>
+          <span class="reading-time">8 min</span>
+        </div>
+        <p class="article-excerpt">Case study sobre consistência e padrões de design. Como aplicar princípios de UX Writing em fluxos críticos de segurança.</p>
+      </article>
+
+      <article class="article-card">
+        <a href="https://izabellaradichi.medium.com/botcamp-letsbot-criando-um-bot-a-partir-de-um-case-real-8ca454c14887" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
+          <h3>Botcamp Letsbot: criando um bot a partir de um case real</h3>
+        </a>
+        <div class="article-meta">
+          <span class="platform">Medium</span>
+          <time>Jul 2021</time>
+          <span class="reading-time">12 min</span>
+        </div>
+        <p class="article-excerpt">Walkthrough completo de um projeto de chatbot: mapeamento de intents, criação de fluxos e testes com usuários reais.</p>
+      </article>
+
+      <article class="article-card">
+        <a href="https://www.linkedin.com/posts/izabellaradichi_mandajobs-3dmodel-3dartist-activity-6850122464043814912-1Y4Y/" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
+          <h3>Design de aplicativos: prototipagem para iniciantes (Domestika)</h3>
+        </a>
+        <div class="article-meta">
+          <span class="platform">LinkedIn</span>
+          <time>Jun 2021</time>
+          <span class="reading-time">3 min</span>
+        </div>
+        <p class="article-excerpt">Documentação de um curso de design de aplicativos. Conceitos fundamentais de prototipagem aplicados ao design conversacional.</p>
+      </article>
     </div>
   </div>
 </section>
