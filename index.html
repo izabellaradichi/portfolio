@@ -4,7 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Izabella Radichi, UX Writer e Designer Conversacional especializada em chatbots e IA conversacional. Portfólio e trajetória profissional.">
+<meta property="og:title" content="Izabella Radichi | UX Writer & Designer Conversacional">
+<meta property="og:description" content="15+ anos de experiência em atendimento, suporte e UX Writing. Especialista em design conversacional e chatbots com IA.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://izabellaradichi.netlify.app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#b5602f">
 <title>Izabella Radichi | UX Writer & Designer Conversacional</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Izabella Radichi",
+  "url": "https://izabellaradichi.netlify.app",
+  "jobTitle": "UX Writer & Designer Conversacional",
+  "sameAs": ["https://www.linkedin.com/in/izabellaradichi", "https://medium.com/@izabellaradichi"],
+  "workLocation": {
+    "@type": "Place",
+    "name": "Belo Horizonte, MG, Brasil"
+  },
+  "description": "15+ anos de experiência em UX Writing e design conversacional de chatbots com IA"
+}
+</script>
 <style>
   :root{
     --bg: #faf6f1;
@@ -12,7 +33,7 @@
     --border: #e6d9c9;
     --text: #2b211a;
     --muted: #766757;
-    --accent: #b5602f;
+    --accent: #9d4c1e;
     --accent-dark: #8a441f;
     --accent-soft: #f2e2d2;
     --accent-2: #6b4a30;
@@ -340,7 +361,7 @@
       <input type="password" id="gatePassword" class="gate-input" placeholder="Senha" autocomplete="off" aria-label="Senha de acesso">
       <p class="gate-error" id="gateError" hidden>
         Essa senha está incorreta. Você pode tentar novamente ou
-        <a href="https://www.linkedin.com/in/izabellaradichi" target="_blank" rel="noopener" class="gate-error-link">entrar em contato comigo</a>.
+        <a href="https://www.linkedin.com/in/izabellaradichi" target="_blank" rel="noopener noreferrer" class="gate-error-link" title="Abre LinkedIn em nova aba">entrar em contato comigo</a>.
       </p>
       <button type="submit" class="btn btn-primary">Acessar portfólio</button>
     </form>
@@ -348,10 +369,10 @@
 </div>
 
 <div id="siteContent" hidden>
-<header class="site-nav">
+<header class="site-nav" role="banner">
   <div class="wrap">
     <a href="#topo" class="brand">Izabella Radichi<span class="dot">.</span></a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu de navegação">Menu</button>
     <nav class="navlinks" id="mainNav" aria-label="Navegação principal">
       <a href="#sobre">Sobre</a>
       <a href="#trajetoria">Trajetória</a>
@@ -375,13 +396,13 @@
       com a criação de experiências conversacionais que realmente funcionam.
     </p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/izabellaradichi" target="_blank" rel="noopener">Meu LinkedIn</a>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/izabellaradichi" target="_blank" rel="noopener noreferrer" title="Abre LinkedIn em nova aba">Meu LinkedIn</a>
       <a class="btn btn-outline" href="#trajetoria">Conhecer trajetória</a>
     </div>
   </div>
 </section>
 
-<section id="sobre">
+<section id="sobre" aria-label="Sobre Izabella">
   <div class="wrap">
     <p class="eyebrow-label">Sobre</p>
     <h2 class="section-heading">Da operação ao design conversacional</h2>
@@ -399,7 +420,7 @@
   </div>
 </section>
 
-<section id="trajetoria">
+<section id="trajetoria" aria-label="Trajetória profissional">
   <div class="wrap">
     <p class="eyebrow-label">Trajetória</p>
     <h2 class="section-heading">Uma linha direta do atendimento ao design conversacional</h2>
@@ -470,7 +491,7 @@
   </div>
 </section>
 
-<section id="experiencia">
+<section id="experiencia" aria-label="Experiência profissional">
   <div class="wrap">
     <p class="eyebrow-label">Experiência</p>
     <h2 class="section-heading">Trajetória profissional detalhada</h2>
@@ -631,7 +652,7 @@
   </div>
 </section>
 
-<section id="formacao">
+<section id="formacao" aria-label="Cursos e formações">
   <div class="wrap">
     <p class="eyebrow-label">Formação</p>
     <h2 class="section-heading">Alguns cursos e formações</h2>
@@ -722,7 +743,7 @@
 </section>
 -->
 
-<section id="ferramentas">
+<section id="ferramentas" aria-label="Stack de ferramentas">
   <div class="wrap">
     <p class="eyebrow-label">Ferramentas</p>
     <h2 class="section-heading">Stack do dia a dia</h2>
@@ -755,44 +776,44 @@
   </div>
 </section>
 
-<section id="artigos">
+<section id="artigos" aria-label="Artigos publicados">
   <div class="wrap">
     <p class="eyebrow-label">Artigos</p>
     <h2 class="section-heading">Escrita sobre UX & conversação</h2>
     <div class="article-list">
-      <a class="article-row" href="https://izabellaradichi.medium.com/chatbots-o-que-est%C3%A1-por-tr%C3%A1s-da-conversa-5bc1850e21ef" target="_blank" rel="noopener">
+      <a class="article-row" href="https://izabellaradichi.medium.com/chatbots-o-que-est%C3%A1-por-tr%C3%A1s-da-conversa-5bc1850e21ef" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
         <span>Chatbots: O que está por trás da conversa</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="article-row" href="https://izabellaradichi.medium.com/divirta-se-ff86f002a47b" target="_blank" rel="noopener">
+      <a class="article-row" href="https://izabellaradichi.medium.com/divirta-se-ff86f002a47b" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
         <span>"Divirta-se!"</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="article-row" href="https://brasil.uxdesign.cc/consist%C3%AAncia-e-padr%C3%B5es-redefinindo-minha-senha-em-um-banco-digital-618280c0c0c0" target="_blank" rel="noopener">
+      <a class="article-row" href="https://brasil.uxdesign.cc/consist%C3%AAncia-e-padr%C3%B5es-redefinindo-minha-senha-em-um-banco-digital-618280c0c0c0" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
         <span>Redefinindo a senha em um banco digital</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="article-row" href="https://izabellaradichi.medium.com/botcamp-letsbot-criando-um-bot-a-partir-de-um-case-real-8ca454c14887" target="_blank" rel="noopener">
+      <a class="article-row" href="https://izabellaradichi.medium.com/botcamp-letsbot-criando-um-bot-a-partir-de-um-case-real-8ca454c14887" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
         <span>Botcamp Letsbot: criando um bot a partir de um case real</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="article-row" href="https://www.linkedin.com/posts/izabellaradichi_mandajobs-3dmodel-3dartist-activity-6850122464043814912-1Y4Y/" target="_blank" rel="noopener">
+      <a class="article-row" href="https://www.linkedin.com/posts/izabellaradichi_mandajobs-3dmodel-3dartist-activity-6850122464043814912-1Y4Y/" target="_blank" rel="noopener noreferrer" title="Abre em nova aba">
         <span>Design de aplicativos: prototipagem para iniciantes (Domestika)</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
     </div>
   </div>
 </section>
 
-<section id="contato">
+<section id="contato" aria-label="Formas de contato">
   <div class="wrap">
     <div class="contact-card">
       <h2>Vamos conversar?</h2>
       <p>Você pode me encontrar no LinkedIn:</p>
       <div class="contact-links">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/izabellaradichi" target="_blank" rel="noopener">Meu LinkedIn</a>
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/izabellaradichi" target="_blank" rel="noopener noreferrer" title="Abre LinkedIn em nova aba">Meu LinkedIn</a>
       </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer>
+<footer role="contentinfo">
   <div class="wrap">Izabella Radichi · UX Writer | Designer Conversacional · Belo Horizonte, MG · Brasil</div>
 </footer>
 
@@ -865,9 +886,17 @@
     onScroll();
 
     document.querySelectorAll('.flip-card').forEach(function(card){
-      card.addEventListener('click', function(){
+      function toggleFlip(){
         var flipped = card.classList.toggle('flipped');
         card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+      }
+      card.addEventListener('click', toggleFlip);
+      // Suporte a teclado (Enter e Space)
+      card.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          toggleFlip();
+        }
       });
     });
 
