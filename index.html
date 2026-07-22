@@ -295,11 +295,51 @@
   .back-to-top:hover{opacity:1;color:var(--accent-dark);border-color:var(--accent);}
 
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  /* GATE - tela de senha */
+  .gate-overlay{
+    position:fixed;inset:0;z-index:1000;
+    background:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;
+  }
+  .gate-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:40px 32px;max-width:380px;width:100%;text-align:center;
+    box-shadow:0 8px 24px rgba(43,33,26,0.06);
+  }
+  .gate-icon{font-size:1.8rem;margin-bottom:14px;}
+  .gate-card h2{font-size:1.25rem;margin:0 0 8px;}
+  .gate-card p{color:var(--muted);font-size:0.92rem;margin:0 0 22px;}
+  .gate-input{
+    width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--border);
+    background:var(--bg);color:var(--text);font-size:0.95rem;margin-bottom:14px;
+    box-sizing:border-box;
+  }
+  .gate-input:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px;}
+  .gate-error{
+    color:#a3341f;font-size:0.85rem;margin:-6px 0 14px;text-align:left;
+  }
+  .gate-card .btn{width:100%;}
 </style>
 </head>
 <body>
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
+<div class="gate-overlay" id="gate">
+  <div class="gate-card">
+    <div class="gate-icon" aria-hidden="true">🔒</div>
+    <h2>Acesso restrito</h2>
+    <p>Digite a senha para ver o portfólio.</p>
+    <form id="gateForm" novalidate>
+      <input type="password" id="gatePassword" class="gate-input" placeholder="Senha" autocomplete="off" aria-label="Senha de acesso">
+      <p class="gate-error" id="gateError" hidden>Senha incorreta. Tente novamente.</p>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+  </div>
+</div>
+
+<div id="siteContent" hidden>
 <header class="site-nav">
   <div class="wrap">
     <a href="#topo" class="brand">Izabella Radichi<span class="dot">.</span></a>
@@ -320,7 +360,7 @@
 <main id="conteudo">
 <section class="hero" id="topo" style="border-top:none;">
   <div class="wrap">
-    <h1>Fluxos conversacionais que <span class="accent">resolvem problemas reais.</span></h1>
+    <h1>Desenho conversas que <span class="accent">resolvem problemas reais.</span></h1>
     <p class="role-line">UX Writer | Designer Conversacional | Chatbots · Belo Horizonte, MG</p>
     <p class="hero-desc">
       15+ anos de trajetória entre atendimento, suporte técnico e produto, unindo visão estratégica de operação
@@ -749,9 +789,43 @@
 </footer>
 
 <a href="#topo" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</a>
+</div>
 
 <script>
   (function(){
+    var PASSWORD = 'portfolio2026izabella';
+    var gate = document.getElementById('gate');
+    var content = document.getElementById('siteContent');
+    var gateForm = document.getElementById('gateForm');
+    var gateInput = document.getElementById('gatePassword');
+    var gateError = document.getElementById('gateError');
+
+    function unlock(){
+      gate.style.display = 'none';
+      content.hidden = false;
+      document.body.style.overflow = '';
+    }
+
+    if(sessionStorage.getItem('portfolioUnlocked') === 'true'){
+      unlock();
+    } else {
+      document.body.style.overflow = 'hidden';
+      gateInput.focus();
+    }
+
+    gateForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(gateInput.value === PASSWORD){
+        sessionStorage.setItem('portfolioUnlocked', 'true');
+        gateError.hidden = true;
+        unlock();
+      } else {
+        gateError.hidden = false;
+        gateInput.value = '';
+        gateInput.focus();
+      }
+    });
+
     var toggle = document.getElementById('navToggle');
     var nav = document.getElementById('mainNav');
     toggle.addEventListener('click', function(){
