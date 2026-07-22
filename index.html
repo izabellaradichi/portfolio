@@ -318,8 +318,13 @@
   }
   .gate-input:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px;}
   .gate-error{
-    color:#a3341f;font-size:0.85rem;margin:-6px 0 14px;text-align:left;
+    color:#a3341f;font-size:0.85rem;margin:-6px 0 14px;text-align:left;line-height:1.5;
   }
+  .gate-error-link{
+    color:inherit;text-decoration:underline;text-decoration-color:rgba(163,52,31,0.35);
+    text-underline-offset:2px;
+  }
+  .gate-error-link:hover{text-decoration-color:currentColor;}
   .gate-card .btn{width:100%;}
 </style>
 </head>
@@ -333,7 +338,10 @@
     <p>Digite a senha para ver o portfólio.</p>
     <form id="gateForm" novalidate>
       <input type="password" id="gatePassword" class="gate-input" placeholder="Senha" autocomplete="off" aria-label="Senha de acesso">
-      <p class="gate-error" id="gateError" hidden>Senha incorreta. Tente novamente.</p>
+      <p class="gate-error" id="gateError" hidden>
+        Essa senha está incorreta. Você pode tentar novamente ou
+        <a href="https://www.linkedin.com/in/izabellaradichi" target="_blank" rel="noopener" class="gate-error-link">entrar em contato comigo</a>.
+      </p>
       <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
   </div>
