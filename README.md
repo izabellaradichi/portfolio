@@ -2,7 +2,7 @@
 
 Site pessoal de Izabella Radichi, UX Writer e Designer Conversacional especializada em chatbots e IA conversacional.
 
-🔗 Site publicado: [adicione aqui o link depois de publicar no Netlify]
+🔗 Site publicado: https://izabellaradichi.netlify.app
 
 ## Sobre o projeto
 
