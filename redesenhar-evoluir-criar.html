@@ -244,7 +244,7 @@
           <p style="font-size:1rem; line-height:1.8; margin:0 0 28px;">O caso mais crítico foi o carrossel. O Messenger tinha esse recurso e o WhatsApp, na época, não tinha: o template de carrossel só chegou depois. Era um carrossel horizontal com imagens, que mostrava várias opções lado a lado, e estava em vários pontos da assistente. Tinha que virar outra coisa.</p>
           <div style="background:#ebe2da; border-radius:8px; padding:32px 36px; margin-bottom:24px;">
             <div style="font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:#6c3a97; margin-bottom:12px;">A decisão</div>
-            <p style="font-size:1.02rem; line-height:1.75; margin:0;">Junto com os stakeholders, decidimos que tudo que usava carrossel no Messenger passaria a usar lista suspensa no WhatsApp. A lista resolvia o problema funcional, era navegável e nativa do canal, mas cobrava um preço: no carrossel as opções apareciam de cara, bem visuais; na lista, a pessoa precisa clicar para abrir, e sem imagem nenhuma. O que era exposição acabou virando consulta.</p>
+            <p style="font-size:1.02rem; line-height:1.75; margin:0;">Junto com os stakeholders, decidimos que tudo que usava carrossel no Messenger passaria a usar lista suspensa no WhatsApp. A lista resolvia o problema funcional, era navegável e nativa do canal, mas cobrava um preço: no carrossel as opções apareciam de cara, bem visuais; na lista, a pessoa precisa clicar para abrir, e sem imagem nenhuma.</p>
           </div>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">E aí apareceu um segundo problema, dessa vez com o conteúdo.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Cada item da lista pode ter até 24 caracteres no título, e o nome do filme vinha de uma API externa, ou seja, não tínhamos controle nenhum sobre o tamanho. Um nome maior que o limite quebraria a lista inteira, e não dava para ficar conferindo isso no retorno da API.</p>
@@ -261,7 +261,7 @@
             </div>
             <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.8rem; color:#241a22; margin:0; text-wrap:pretty;">Evoluir o que já existia</h2>
           </div>
-          <p style="font-size:1rem; line-height:1.8; margin:0 0 28px;">Adaptar ao canal novo foi só o começo. Nenhum dos fluxos que herdei chegou a 2025 do jeito que estava. Alguns exemplos do que <b>evoluiu </b>e por quê:</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0 0 28px;">Nenhum dos fluxos que herdei chegou a 2025 do jeito que estava. Alguns exemplos do que <b>evoluiu </b>e por quê:</p>
 
           <div style="display:flex; justify-content:flex-end; margin-bottom:14px;">
             <button onClick="{{ toggleAllEvo }}" style="background:transparent; border:1.5px solid rgba(36,26,34,0.18); color:#6c3a97; font-family:'Work Sans', system-ui, sans-serif; font-size:0.86rem; font-weight:700; padding:9px 20px; border-radius:8px; cursor:pointer; transition:all .2s;" style-hover="border-color:#a8523a; color:#a8523a;">{{ evoToggleLabel }}</button>
@@ -304,7 +304,7 @@
             </div>
             <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.8rem; color:#241a22; margin:0; text-wrap:pretty;">Criar o que não existia</h2>
           </div>
-          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Se alguns fluxos precisaram mudar, outros precisaram nascer. <b>Criei </b>fluxos novos ao longo de todo o projeto, dos mais diretos aos mais complexos.</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;"><b>Criei </b>fluxos novos ao longo de todo o projeto, dos mais diretos aos mais complexos.</p>
           <figure style="margin:8px 0 28px;">
             <div style="background:#eee3d8; border-radius:8px; padding:20px; border-radius:8px; box-shadow:0 10px 34px rgba(0,0,0,0.1);">
               <img onClick="{{ zoomPanorama }}" src="redesenhar-evoluir-criar/06-panorama-fluxos.png" alt="Panorama dos fluxos documentados no Figma, com o fluxo de inscrição em atividades destacado" loading="lazy" style="display:block; width:100%; border-radius:8px; cursor:zoom-in;">
@@ -366,7 +366,7 @@
                 </sc-for>
               </div>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">E a resposta nunca era só avisar que deu errado. Quando a pessoa digitava um dado no formato errado, por exemplo, a mensagem explicava o que tinha acontecido sem colocar a culpa nela, dizia qual era o formato esperado e devolvia a chance de tentar de novo.</p>
-          <p style="font-size:1.1rem; line-height:1.75; color:#241a22; margin:0 0 28px; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">Estrutura dá para resolver no desenho. O texto que vem pronto de fora, não.</p>
+          
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Logo no início eu tinha escrito o manual de tom e voz da assistente, partindo de uma dinâmica de personalidade que a empresa já tinha feito, e o marketing aprovou o resultado. Com ele em mãos, propus um processo de aprovação para o único conteúdo que dava para controlar, que eram as respostas das perguntas frequentes:</p>
 
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-bottom:18px;">
@@ -386,10 +386,10 @@
         <!-- CURADORIA -->
         <section id="curadoria" style="scroll-margin-top:110px; margin-bottom:32px;">
           <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.8rem; color:#241a22; margin:0 0 24px; text-wrap:pretty;">Ler o que a assistente não entendeu</h2>
-          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Como eu sabia o que estava dando errado? Em parte, lendo.</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Parte do que estava dando errado eu descobria lendo as conversas.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">O roadmap vinha do time de produto e dos stakeholders, mas parte do que eu levava para essas discussões saía de outro lugar.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 24px;">Eu lia o feedback das pessoas: o que elas escreviam e a assistente não sabia responder, seja porque não entendia, seja porque não tinha o conteúdo.</p>
-          <p style="font-size:1.1rem; line-height:1.75; color:#241a22; margin:0 0 24px; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">Para mim, isso faz parte do trabalho de quem desenha conversa. Sem olhar o que acontece de fato, você acaba discutindo preferência em vez de evidência.</p>
+          <p style="font-size:1.1rem; line-height:1.75; color:#241a22; margin:0 0 24px; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">Para mim, isso faz parte do trabalho de quem desenha conversa.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Nada disso virava mudança automaticamente. Por exemplo, uma pergunta que aparece muito nem sempre precisa virar FAQ, então cada padrão era analisado para decidir se fazia sentido uma FAQ nova, uma frase de treino ou um ajuste no fluxo.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0;">Foi assim que a base de FAQs, que começou copiada dos sites dos shoppings, foi crescendo com o que as pessoas de fato perguntavam.</p>
         </section>
@@ -445,7 +445,7 @@
           </div>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Durante boa parte do tempo em que estive no projeto, existia uma equipe de curadoria cuidando das métricas, e eu ficava concentrada na escrita e no desenho. Fazia sentido na divisão de trabalho da época.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Mas, escrevendo este case, percebi o quanto senti falta disso: eu consigo explicar cada decisão que tomei e por quê, mas não consigo dizer o que cada uma delas mudou depois que foi para o ar.</p>
-          <p style="font-size:1rem; line-height:1.8; margin:0;">Hoje eu faria diferente. Não necessariamente medindo eu mesma, mas combinando antes o que precisaria ser observado em cada mudança, buscando esse dado depois e registrando ao lado do fluxo. Fluxo documentado sem o dado conta só parte da história.</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0;">Hoje eu faria diferente. Não necessariamente medindo eu mesma, mas combinando antes o que precisaria ser observado em cada mudança, buscando esse dado depois e registrando ao lado do fluxo.</p>
         </section>
 
       </main>
@@ -475,7 +475,7 @@
         <span style="font-size:0.85rem; font-weight:600; color:#241a22;">Aberta a novas oportunidades</span>
       </div>
         <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.4rem; line-height:1.2; margin:0 0 12px; color:#241a22; text-wrap:balance;">Obrigada por ter chegado <em style="font-style:italic; color:#a8523a;">até aqui.</em></h2>
-        <p style="font-size:1rem; color:#4a3f47; margin:0 0 20px;">Quer falar sobre o que viu aqui? Você pode entrar em contato através do:</p>
+        <p style="font-size:1rem; color:#4a3f47; margin:0 0 20px;">Quer falar sobre o que viu aqui? Fale comigo pelo:</p>
         <div style="display:flex; gap:14px; flex-wrap:wrap;">
           <a href="https://www.linkedin.com/in/izabellaradichi/" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; background:#a03d27; color:#fff; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="background:#b8492e; color:#fff;">LinkedIn</a>
           <a href="mailto:radichiizabella@gmail.com" style="display:inline-block; white-space:nowrap; flex-shrink:0; border:1px solid rgba(36,26,34,0.3); color:#241a22; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="border-color:#a8523a; color:#a8523a;">E-mail</a>
@@ -483,7 +483,7 @@
       </div>
     </div>
     <div style="max-width:1040px; margin:0 auto; padding:0 32px 32px;">
-      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Tudo que está aqui foi feito por mim. Eu escrevi o conteúdo, escolhi o que entrava e revisei cada página. O Claude, da Anthropic, organizou a estrutura, fez o design e escreveu o código.</p>
+      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Os textos e as escolhas de conteúdo são meus. Estrutura, design e código foram feitos com o Claude, da Anthropic.</p>
       <p style="margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
     </div>
   </footer>
