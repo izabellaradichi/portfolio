@@ -2,7 +2,7 @@
 
 Site pessoal de Izabella Radichi, UX Writer e Designer Conversacional, com 15+ anos de trajetória entre atendimento, suporte técnico e produto, 5 deles em chatbots e IA conversacional.
 
-**[Acessar o site](https://portfolio.radichiizabella.workers.dev/)**
+**[Acessar o site](https://izabellaradichi.pages.dev/)**
 
 ## Páginas
 
