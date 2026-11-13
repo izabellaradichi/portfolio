@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- head:inicio -->
+<meta name="description" content="Chatbot de turismo com RAG, feito no n8n com OpenAI e Telegram.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Izabella Radichi">
+<meta property="og:title" content="UaiBot · Izabella Radichi">
+<meta property="og:description" content="Chatbot de turismo com RAG, feito no n8n com OpenAI e Telegram.">
+<meta property="og:url" content="https://portfolio.radichiizabella.workers.dev/uaibot.html">
+<meta property="og:image" content="https://portfolio.radichiizabella.workers.dev/assets/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#faf6f2">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin>
+<link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0ec9896d71434c99965b6f0f87b3f12c"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- head:fim -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>UaiBot | Izabella Radichi</title>
+  <meta name="description" content="Case UaiBot: chatbot de turismo com RAG, feito no n8n com OpenAI e Telegram.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; font-size: 14.5px; }
+    body { margin:0; background:#faf6f2; color:#241a22; font-family:'Work Sans', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+    * { box-sizing:border-box; }
+    body { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='26' viewBox='0 0 22 26'><path d='M2 2 L2 21 L7 16.5 L10.5 24 L14 22.4 L10.6 15 L17.5 15 Z' fill='%23c9563a' stroke='%23fffdfb' stroke-width='1.6' stroke-linejoin='round'/></svg>") 2 2, auto; }
+    a, button, [role="button"], summary, label, a *, button * { cursor: pointer; }
+    a { color:#a8523a; text-decoration:none; }
+    a:hover { color:#8a3f2b; }
+    ::selection { background:#c9563a; color:#fff; }
+    @media (max-width:900px) {
+      [data-grid] { grid-template-columns:1fr !important; gap:28px !important; }
+      [data-grid] > * { grid-column:1 / -1 !important; min-width:0 !important; }
+    }
+
+    @media (max-width:640px) {
+      html { font-size: 15px !important; }
+      header nav { flex-wrap:nowrap !important; overflow-x:auto; gap:20px !important; width:100%; padding-bottom:6px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+      header nav::-webkit-scrollbar { display:none; }
+      header nav a { white-space:nowrap; flex-shrink:0; }
+      [data-acc] { position:relative; padding-right:44px !important; }
+      [data-acc] > div:last-child { position:absolute; right:0; top:16px; }
+    }
+  </style>
+</helmet>
+
+<div style="background:#faf6f2; min-height:100vh;">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(250,246,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid rgba(36,26,34,0.24);">
+    <div style="max-width:1040px; margin:0 auto; padding:14px 32px; display:flex; align-items:baseline; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+      <a href="index.html#topo" style="font-family:'DM Serif Display', serif; font-size:1.75rem; white-space:nowrap; flex-shrink:0; line-height:1; color:#241a22; letter-spacing:0.01em;">Izabella Radichi</a>
+      <nav style="display:flex; gap:24px; flex-wrap:wrap; align-items:center;">
+        <a href="index.html" style="display:inline-flex; align-items:center; gap:6px; font-size:0.95rem; font-weight:600; color:#a8523a; padding-bottom:3px; border-bottom:1px solid transparent; transition:border-color .2s;" style-hover="border-color:#a8523a;">← Início</a>
+        <a href="index.html#trajetoria" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Trajetória</a>
+        <a href="index.html#case" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Cases</a>
+        <a href="index.html#artigos" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Artigos</a>
+        <a href="curriculo.html" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Currículo</a>
+        <a href="#contato" style="font-size:0.88rem; font-weight:600; color:#241a22; border:1px solid rgba(36,26,34,0.35); padding:7px 16px; border-radius:6px; white-space:nowrap; transition:border-color .2s, color .2s;" style-hover="border-color:#a8523a; color:#a8523a;">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section data-grid="1" style="max-width:1040px; margin:0 auto; padding:48px 32px 36px; display:grid; grid-template-columns:repeat(12,1fr); gap:28px; align-items:end;">
+    <div style="grid-column:span 8; min-width:300px;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
+        <span style="width:46px; height:2px; background:#c9563a; display:block;"></span>
+        <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">Case · Chatbot de turismo com RAG</span>
+      </div>
+      <h1 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(2.4rem,4.6vw,4rem); line-height:1.02; margin:0 0 18px; color:#241a22;">Uai<em style="font-style:italic; color:#a8523a;">Bot</em></h1>
+      <p style="font-size:1.1rem; line-height:1.65; color:#241a22; margin:0; max-width:680px; text-wrap:pretty;">O que acontece quando você trabalha 7 anos com turismo, 4 anos com chatbots, está estudando automação e é de MG? O resultado é o UaiBot.</p>
+    </div>
+    <div style="grid-column:span 4; min-width:220px; display:grid; gap:0;">
+      <div style="padding:16px 0; border-top:1px solid rgba(36,26,34,0.18);">
+        <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Tipo</div>
+        <div style="font-size:1rem; font-weight:600; color:#241a22;">Projeto de estudo</div>
+      </div>
+      <div style="padding:16px 0; border-top:1px solid rgba(36,26,34,0.18); border-bottom:1px solid rgba(36,26,34,0.18);">
+        <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Ferramentas</div>
+        <div style="font-size:1rem; font-weight:600; color:#241a22;">n8n, OpenAI e Telegram</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1040px; margin:0 auto; padding:0 32px 44px;">
+    <figure style="margin:0;">
+      <div style="background:#eee3d8; border:1px solid rgba(36,26,34,0.18); padding:20px; border-radius:8px; display:flex; justify-content:center;">
+        <video src="uaibot/demo.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="display:block; max-width:100%; max-height:78vh; background:#000;" preload="metadata"></video>
+      </div>
+      <figcaption style="font-size:0.9rem; color:#6b5d66; margin-top:14px;">Demonstração do UaiBot no Telegram.</figcaption>
+    </figure>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18); background:#eee3d8;">
+    <div data-grid="1" style="max-width:1040px; margin:0 auto; padding:32px 32px; display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px;">
+      <div style="grid-column:1 / -1; min-width:0;">
+        <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">01 · O projeto</div>
+      </div>
+      <div style="grid-column:span 9; min-width:0;">
+        <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 24px; color:#241a22;">De uma aula a um bot com cara de realidade</h2>
+        <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0; text-wrap:pretty;">Durante uma aula sobre aplicação de RAG, criei uma assistente para a UaiFly, uma agência de viagens fictícia. Decidi ir além do exemplo do curso e criei um bot com base na realidade que vivi por anos: o dia a dia da emissão de bilhetes aéreos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18);">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
+      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:24px;">
+        <div style="grid-column:1 / -1; min-width:0;">
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">02 · Como foi feito</div>
+        </div>
+        <div style="grid-column:1 / -1; min-width:0;">
+          <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0; color:#241a22;">Construção, base e um aprendizado</h2>
+        </div>
+      </div>
+      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:28px;">
+        <div style="grid-column:span 9; min-width:300px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;">
+          <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="4">
+            <div style="background:#eee3d8; padding:18px 20px; border-radius:8px;">
+              <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#a8523a; margin-bottom:10px;">{{ b.lead }}</div>
+              <p style="font-size:0.95rem; line-height:1.7; color:#4a3f47; margin:0;">{{ b.text }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18); background:#eee3d8;">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
+      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:36px;">
+        <div style="grid-column:1 / -1; min-width:0;">
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">03 · Fluxo</div>
+        </div>
+        <div style="grid-column:1 / -1; min-width:0;">
+          <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 12px; color:#241a22;">O fluxo no n8n</h2>
+          <p style="font-size:1rem; color:#6b5d66; margin:0;">Clique na imagem para ampliar.</p>
+        </div>
+      </div>
+      <figure style="margin:0;">
+        <div onClick="{{ openFlow }}" style="background:#faf6f2; border:1px solid rgba(36,26,34,0.18); padding:20px; border-radius:8px; cursor:zoom-in; transition:border-color .25s;" style-hover="border-color:#c9563a;">
+          <img src="uaibot/fluxo-n8n.png" alt="Fluxo do UaiBot no n8n: documento, vetorização e chatbot inteligente" loading="lazy" style="display:block; width:100%;">
+        </div>
+        <figcaption style="font-size:0.9rem; line-height:1.55; color:#6b5d66; margin-top:14px;">No passo 1, o documento do Google Drive é vetorizado. No passo 2, o agente recebe a mensagem do Telegram, consulta a base vetorial e responde.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18);">
+    <div data-grid="1" style="max-width:1040px; margin:0 auto; padding:32px 32px; display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px;">
+      <div style="grid-column:1 / -1; min-width:0;">
+        <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">04 · Reflexão</div>
+      </div>
+      <div style="grid-column:span 9; min-width:0;">
+        <p style="font-size:1.1rem; line-height:1.75; color:#241a22; margin:0; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">Eu sei que produtos reais têm complexidades (e problemas) bem maiores que cases fictícios como esses. Mas, sem dúvida, aprender a base e a lógica é um dos passos mais importantes para qualquer aprendizado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18);">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px; display:flex; justify-content:space-between; align-items:baseline; gap:24px 40px; flex-wrap:wrap;">
+      <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#6b5d66;">Outros cases</span>
+      <div style="display:flex; gap:20px 40px; flex-wrap:wrap;">
+        <a href="redesenhar-evoluir-criar.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Redesenhar, <em style="font-style:italic; color:#a8523a;">evoluir</em>, criar →</a>
+        <a href="squadtrip.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Squad<em style="font-style:italic; color:#a8523a;">Trip</em> →</a>
+        <a href="notas-fiscais.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Organização de <em style="font-style:italic; color:#a8523a;">notas fiscais</em> →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato" style="scroll-margin-top:80px; border-top:1px solid rgba(36,26,34,0.24);">
+    <div data-grid="1" style="max-width:1040px; margin:0 auto; padding:32px 32px 24px; display:grid; grid-template-columns:repeat(12,1fr); gap:28px; align-items:end;">
+      <div style="grid-column:1 / -1; min-width:0;">
+        <div style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(36,26,34,0.24); background:#fffdfb; padding:8px 14px; border-radius:6px; margin-bottom:16px;">
+        <span style="width:8px; height:8px; background:#3f8a5a; display:block; flex-shrink:0;"></span>
+        <span style="font-size:0.85rem; font-weight:600; color:#241a22;">Aberta a novas oportunidades</span>
+      </div>
+        <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.4rem; line-height:1.2; margin:0 0 12px; color:#241a22; text-wrap:balance;">Obrigada por ter chegado <em style="font-style:italic; color:#a8523a;">até aqui.</em></h2>
+        <p style="font-size:1rem; color:#4a3f47; margin:0 0 20px;">Quer falar sobre o que viu aqui? Você pode entrar em contato através do:</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="https://www.linkedin.com/in/izabellaradichi/" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; background:#a03d27; color:#fff; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="background:#b8492e; color:#fff;">LinkedIn</a>
+          <a href="mailto:radichiizabella@gmail.com" style="display:inline-block; white-space:nowrap; flex-shrink:0; border:1px solid rgba(36,26,34,0.3); color:#241a22; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="border-color:#a8523a; color:#a8523a;">E-mail</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1040px; margin:0 auto; padding:0 32px 32px;">
+      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Tudo que está aqui foi feito por mim. Eu escrevi o conteúdo, escolhi o que entrava e revisei cada página. O Claude, da Anthropic, organizou a estrutura, fez o design e escreveu o código.</p>
+      <p style="margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
+    </div>
+  </footer>
+
+  <sc-if value="{{ hasLightbox }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.88); display:flex; align-items:center; justify-content:center; padding:40px; cursor:zoom-out;">
+      <img src="uaibot/fluxo-n8n.png" alt="Fluxo ampliado" style="max-width:100%; max-height:100%; object-fit:contain;">
+      <span style="position:absolute; top:20px; right:28px; font-size:0.86rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#241a22;">Fechar ✕</span>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: false };
+
+  blocks = [
+    { lead: 'A construção técnica', text: 'O fluxo foi todo feito no n8n e integra OpenAI e Telegram, saindo do ambiente de testes do editor para uma interação real no celular, rodando localmente.' },
+    { lead: 'Base de conhecimento', text: 'Utilizei IA para gerar 100 perguntas fictícias (FAQ), e a minha contribuição foi na estratégia: usei minha experiência na área para definir os tópicos macro que a IA deveria abordar, garantindo que ela falasse sobre dores reais dos passageiros. O conteúdo disponibilizado foi bem grande.' },
+    { lead: 'RAG e Vector Store', text: 'Foi utilizado um banco de dados vetorial onde as FAQs são consultadas antes da assistente responder ao cliente, garantindo precisão.' },
+    { lead: 'Um aprendizado', text: 'Durante os testes, percebi que o bot misturava dados atuais com versões antigas de um outro arquivo, pois o banco de dados da IA estava "sujo". A solução foi ativar uma opção que garante a limpeza da memória a cada atualização. Um pequeno detalhezinho que eu descobri “fuçando” a ferramenta.' }
+  ];
+
+  renderVals() {
+    return {
+      blocks: this.blocks,
+      hasLightbox: this.state.open,
+      openFlow: () => this.setState({ open: true }),
+      closeLightbox: () => this.setState({ open: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

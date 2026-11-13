@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- head:inicio -->
+<meta name="description" content="Aplicação web para planejar viagens em grupo, criada com IA a partir de conversa em linguagem natural.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Izabella Radichi">
+<meta property="og:title" content="SquadTrip · Izabella Radichi">
+<meta property="og:description" content="Aplicação web para planejar viagens em grupo, criada com IA a partir de conversa em linguagem natural.">
+<meta property="og:url" content="https://portfolio.radichiizabella.workers.dev/squadtrip.html">
+<meta property="og:image" content="https://portfolio.radichiizabella.workers.dev/assets/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#faf6f2">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin>
+<link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0ec9896d71434c99965b6f0f87b3f12c"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- head:fim -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>SquadTrip | Izabella Radichi</title>
+  <meta name="description" content="Case SquadTrip: uma aplicação web para planejar viagens em grupo, criada com IA a partir de conversa em linguagem natural.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; font-size: 14.5px; }
+    body { margin:0; background:#faf6f2; color:#241a22; font-family:'Work Sans', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+    * { box-sizing:border-box; }
+    body { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='26' viewBox='0 0 22 26'><path d='M2 2 L2 21 L7 16.5 L10.5 24 L14 22.4 L10.6 15 L17.5 15 Z' fill='%23c9563a' stroke='%23fffdfb' stroke-width='1.6' stroke-linejoin='round'/></svg>") 2 2, auto; }
+    a, button, [role="button"], summary, label, a *, button * { cursor: pointer; }
+    a { color:#a8523a; text-decoration:none; }
+    a:hover { color:#8a3f2b; }
+    ::selection { background:#c9563a; color:#fff; }
+    @media (max-width:900px) {
+      [data-grid] { grid-template-columns:1fr !important; gap:28px !important; }
+      [data-grid] > * { grid-column:1 / -1 !important; min-width:0 !important; }
+    }
+
+    @media (max-width:640px) {
+      html { font-size: 15px !important; }
+      header nav { flex-wrap:nowrap !important; overflow-x:auto; gap:20px !important; width:100%; padding-bottom:6px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+      header nav::-webkit-scrollbar { display:none; }
+      header nav a { white-space:nowrap; flex-shrink:0; }
+      [data-acc] { position:relative; padding-right:44px !important; }
+      [data-acc] > div:last-child { position:absolute; right:0; top:16px; }
+    }
+  </style>
+</helmet>
+
+<div style="background:#faf6f2; min-height:100vh;">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(250,246,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid rgba(36,26,34,0.24);">
+    <div style="max-width:1040px; margin:0 auto; padding:14px 32px; display:flex; align-items:baseline; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+      <a href="index.html#topo" style="font-family:'DM Serif Display', serif; font-size:1.75rem; white-space:nowrap; flex-shrink:0; line-height:1; color:#241a22; letter-spacing:0.01em;">Izabella Radichi</a>
+      <nav style="display:flex; gap:24px; flex-wrap:wrap; align-items:center;">
+        <a href="index.html" style="display:inline-flex; align-items:center; gap:6px; font-size:0.95rem; font-weight:600; color:#a8523a; padding-bottom:3px; border-bottom:1px solid transparent; transition:border-color .2s;" style-hover="border-color:#a8523a;">← Início</a>
+        <a href="index.html#trajetoria" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Trajetória</a>
+        <a href="index.html#case" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Cases</a>
+        <a href="index.html#artigos" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Artigos</a>
+        <a href="curriculo.html" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Currículo</a>
+        <a href="#contato" style="font-size:0.88rem; font-weight:600; color:#241a22; border:1px solid rgba(36,26,34,0.35); padding:7px 16px; border-radius:6px; white-space:nowrap; transition:border-color .2s, color .2s;" style-hover="border-color:#a8523a; color:#a8523a;">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section data-grid="1" style="max-width:1040px; margin:0 auto; padding:48px 32px 36px; display:grid; grid-template-columns:repeat(12,1fr); gap:28px; align-items:end;">
+    <div style="grid-column:span 8; min-width:300px;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
+        <span style="width:46px; height:2px; background:#c9563a; display:block;"></span>
+        <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">Case · Produto criado com IA</span>
+      </div>
+      <h1 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(2.4rem,4.6vw,4rem); line-height:1.02; margin:0 0 18px; color:#241a22;">Squad<em style="font-style:italic; color:#a8523a;">Trip</em></h1>
+      <p style="font-size:1.1rem; line-height:1.65; color:#241a22; margin:0; max-width:680px; text-wrap:pretty;">O SquadTrip é uma aplicação web moderna projetada para facilitar o planejamento de viagens em grupo. Com ele, você pode organizar roteiros, gerenciar detalhes da viagem e coordenar tudo com seus amigos em um só lugar.</p>
+    </div>
+    <div style="grid-column:span 4; min-width:220px; display:grid; gap:0;">
+      <div style="padding:16px 0; border-top:1px solid rgba(36,26,34,0.18);">
+        <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Tipo</div>
+        <div style="font-size:1rem; font-weight:600; color:#241a22;">Projeto pessoal</div>
+      </div>
+      <div style="padding:16px 0; border-top:1px solid rgba(36,26,34,0.18); border-bottom:1px solid rgba(36,26,34,0.18);">
+        <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Ferramentas</div>
+        <div style="font-size:1rem; font-weight:600; color:#241a22;">Lovable e Gemini</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1040px; margin:0 auto; padding:0 32px 44px;">
+    <figure style="margin:0;">
+      <div style="background:#eee3d8; border:1px solid rgba(36,26,34,0.18); padding:20px; border-radius:8px;">
+        <video src="squadtrip/landing.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="display:block; width:100%; background:#000;" preload="metadata"></video>
+      </div>
+      <figcaption style="font-size:0.9rem; color:#6b5d66; margin-top:14px;">Landing page do SquadTrip.</figcaption>
+    </figure>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18); background:#eee3d8;">
+    <div data-grid="1" style="max-width:1040px; margin:0 auto; padding:32px 32px; display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px;">
+      <div style="grid-column:1 / -1; min-width:0;">
+        <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">01 · O projeto</div>
+      </div>
+      <div style="grid-column:span 9; min-width:0;">
+        <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 24px; color:#241a22;">O desafio</h2>
+        <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0 0 18px; text-wrap:pretty;">O SquadTrip surgiu para resolver uma "dor" pessoal, mas muito comum: a dificuldade de organizar viagens com amigos sem brigas ou confusão.</p>
+        <p style="font-size:1rem; line-height:1.8; color:#241a22; margin:0; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">A missão era simples: substituir planilhas complexas por uma interface amigável que permitisse a criação de roteiros colaborativos e votações instantâneas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18);">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
+      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:24px;">
+        <div style="grid-column:1 / -1; min-width:0;">
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">02 · Funcionalidades</div>
+        </div>
+        <div style="grid-column:1 / -1; min-width:0;">
+          <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0; color:#241a22;">Principais funcionalidades</h2>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0; border-top:1px solid rgba(36,26,34,0.18);">
+        <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+          <div style="padding:30px 28px 30px 0; border-bottom:1px solid rgba(36,26,34,0.18);">
+            <h3 style="font-size:1.02rem; font-weight:700; color:#241a22; margin:0 0 10px;">{{ f.title }}</h3>
+            <p style="font-size:0.95rem; line-height:1.65; color:#4a3f47; margin:0;">{{ f.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18); background:#eee3d8;">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
+      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:24px;">
+        <div style="grid-column:1 / -1; min-width:0;">
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">03 · Como funciona</div>
+        </div>
+        <div style="grid-column:1 / -1; min-width:0;">
+          <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 12px; color:#241a22;">A jornada do usuário</h2>
+          <p style="font-size:1rem; color:#6b5d66; margin:0;">A jornada do usuário no SquadTrip é simples e direta:</p>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div style="border:1px solid rgba(36,26,34,0.18); padding:28px 24px; border-radius:8px;">
+            <div style="font-family:'DM Serif Display', serif; font-size:1.8rem; line-height:1; color:#a8523a; margin-bottom:18px;">{{ s.n }}</div>
+            <h3 style="font-size:1rem; font-weight:700; color:#241a22; margin:0 0 8px;">{{ s.title }}</h3>
+            <p style="font-size:0.92rem; line-height:1.6; color:#4a3f47; margin:0;">{{ s.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18);">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
+      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:32px;">
+        <div style="grid-column:1 / -1; min-width:0;">
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">04 · Bastidores</div>
+        </div>
+        <div style="grid-column:span 9; min-width:0;">
+          <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 24px; color:#241a22; text-wrap:pretty;">Como tirei a ideia do papel</h2>
+          <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0 0 18px; text-wrap:pretty;">Criei o SquadTrip e todo o seu design utilizando o <strong style="color:#241a22;">Lovable</strong>, uma ferramenta de inteligência artificial onde o código é gerado a partir de uma conversa em linguagem natural. Em conjunto, usei o <strong style="color:#241a22;">Gemini</strong>, que me auxiliou com prompts mais estruturados a partir das minhas ideias.</p>
+          <p style="font-size:1rem; line-height:1.8; color:#241a22; margin:0 0 18px; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">Meu papel não foi programar linha por linha, mas sim atuar definindo as regras, o design e guiando a IA para construir exatamente o que eu precisava.</p>
+          <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0;">Dividi o projeto em 3 fases de evolução, e abaixo cito algumas melhorias feitas em cada fase:</p>
+        </div>
+      </div>
+      <div>
+        <sc-for list="{{ phases }}" as="p" hint-placeholder-count="3">
+          <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; padding:26px 0; border-top:1px solid rgba(36,26,34,0.18);">
+            <div style="grid-column:1 / -1; min-width:0;">
+              <span style="display:inline-block; background:#a03d27; color:#fff; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:6px 12px; border-radius:6px;">{{ p.label }}</span>
+            </div>
+            <div style="grid-column:1 / -1; min-width:0;">
+              <h3 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.4rem; line-height:1.2; margin:0 0 12px; color:#241a22;">{{ p.title }}</h3>
+              <p style="font-size:1rem; line-height:1.7; color:#6b5d66; margin:0 0 24px;">{{ p.intro }}</p>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;">
+                <sc-for list="{{ p.items }}" as="it" hint-placeholder-count="3">
+                  <div style="background:#eee3d8; padding:18px 20px; border-radius:8px;">
+                    <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#a8523a; margin-bottom:10px;">{{ it.lead }}</div>
+                    <p style="font-size:0.95rem; line-height:1.65; color:#4a3f47; margin:0;">{{ it.text }}</p>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18); background:#eee3d8;">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
+      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:24px;">
+        <div style="grid-column:1 / -1; min-width:0;">
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">05 · Telas</div>
+        </div>
+        <div style="grid-column:1 / -1; min-width:0;">
+          <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 12px; color:#241a22;">Algumas telas</h2>
+          <p style="font-size:1rem; color:#6b5d66; margin:0;">Clique em qualquer tela para ampliar.</p>
+        </div>
+      </div>
+      <div style="display:grid; gap:32px;">
+        <sc-for list="{{ screens }}" as="g" hint-placeholder-count="5">
+          <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px;">
+            <div style="grid-column:1 / -1; min-width:0; font-size:0.8rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; padding-top:14px; border-top:1px solid rgba(36,26,34,0.18);">{{ g.name }}</div>
+            <div style="grid-column:1 / -1; min-width:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;">
+              <sc-for list="{{ g.items }}" as="s" hint-placeholder-count="2">
+                <figure style="margin:0;">
+                  <div onClick="{{ s.open }}" style="background:#faf6f2; border:1px solid rgba(36,26,34,0.18); padding:14px; border-radius:8px; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; cursor:zoom-in; transition:border-color .25s;" style-hover="border-color:#c9563a;">
+                    <img src="{{ s.src }}" alt="{{ s.cap }}" loading="lazy" style="display:block; max-width:100%; max-height:100%; object-fit:contain;">
+                  </div>
+                  <figcaption style="font-size:0.9rem; color:#4a3f47; margin-top:12px;">{{ s.cap }}</figcaption>
+                </figure>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(36,26,34,0.18);">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px; display:flex; justify-content:space-between; align-items:baseline; gap:24px 40px; flex-wrap:wrap;">
+      <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#6b5d66;">Outros cases</span>
+      <div style="display:flex; gap:20px 40px; flex-wrap:wrap;">
+        <a href="redesenhar-evoluir-criar.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Redesenhar, <em style="font-style:italic; color:#a8523a;">evoluir</em>, criar →</a>
+        <a href="uaibot.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Uai<em style="font-style:italic; color:#a8523a;">Bot</em> →</a>
+        <a href="notas-fiscais.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Organização de <em style="font-style:italic; color:#a8523a;">notas fiscais</em> →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato" style="scroll-margin-top:80px; border-top:1px solid rgba(36,26,34,0.24);">
+    <div data-grid="1" style="max-width:1040px; margin:0 auto; padding:32px 32px 24px; display:grid; grid-template-columns:repeat(12,1fr); gap:28px; align-items:end;">
+      <div style="grid-column:1 / -1; min-width:0;">
+        <div style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(36,26,34,0.24); background:#fffdfb; padding:8px 14px; border-radius:6px; margin-bottom:16px;">
+        <span style="width:8px; height:8px; background:#3f8a5a; display:block; flex-shrink:0;"></span>
+        <span style="font-size:0.85rem; font-weight:600; color:#241a22;">Aberta a novas oportunidades</span>
+      </div>
+        <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.4rem; line-height:1.2; margin:0 0 12px; color:#241a22; text-wrap:balance;">Obrigada por ter chegado <em style="font-style:italic; color:#a8523a;">até aqui.</em></h2>
+        <p style="font-size:1rem; color:#4a3f47; margin:0 0 20px;">Quer falar sobre o que viu aqui? Você pode entrar em contato através do:</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="https://www.linkedin.com/in/izabellaradichi/" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; background:#a03d27; color:#fff; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="background:#b8492e; color:#fff;">LinkedIn</a>
+          <a href="mailto:radichiizabella@gmail.com" style="display:inline-block; white-space:nowrap; flex-shrink:0; border:1px solid rgba(36,26,34,0.3); color:#241a22; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="border-color:#a8523a; color:#a8523a;">E-mail</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1040px; margin:0 auto; padding:0 32px 32px;">
+      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Tudo que está aqui foi feito por mim. Eu escrevi o conteúdo, escolhi o que entrava e revisei cada página. O Claude, da Anthropic, organizou a estrutura, fez o design e escreveu o código.</p>
+      <p style="margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
+    </div>
+  </footer>
+
+  <sc-if value="{{ hasLightbox }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.88); display:flex; align-items:center; justify-content:center; padding:40px; cursor:zoom-out;">
+      <img src="{{ lightbox }}" alt="Tela ampliada" style="max-width:100%; max-height:100%; object-fit:contain;">
+      <span style="position:absolute; top:20px; right:28px; font-size:0.86rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#241a22;">Fechar ✕</span>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lightbox: null };
+
+  features = [
+    { title: 'Planejamento colaborativo', text: 'Todos os membros do grupo podem sugerir hospedagens, atividades e destinos.' },
+    { title: 'Votação democrática', text: 'Sistema de votação integrado para decidir datas e locais de forma justa.' },
+    { title: 'Interação em tempo real', text: 'Comentários e discussões específicas para cada sugestão.' },
+    { title: 'Notificações', text: 'Alertas sobre novas sugestões e resultados de votações.' }
+  ];
+
+  steps = [
+    { n: '01', title: 'Crie sua viagem', text: 'Defina o destino inicial, datas e dê um nome para a aventura.' },
+    { n: '02', title: 'Convide o Squad', text: 'Compartilhe um link único de convite para reunir a turma.' },
+    { n: '03', title: 'Faça sugestões', text: 'O grupo adiciona opções de hospedagem, transporte e lazer.' },
+    { n: '04', title: 'Vote e decida', text: 'As pessoas votam nas opções favoritas e o grupo pode montar o itinerário com base nisso.' }
+  ];
+
+  phases = [
+    { label: 'Fase 1', title: 'Definindo as regras do jogo (lógica)', intro: 'O primeiro passo foi "ensinar" a IA como o sistema deveria funcionar para não ter erros.', items: [
+      { lead: 'Estrutura', text: 'Pedi para a IA criar um sistema onde cada viagem fosse separada e segura.' },
+      { lead: 'Regras de negócio', text: 'Defini travas lógicas que a IA deveria implementar, como proibir que a data de "volta" fosse anterior à data de "ida".' },
+      { lead: 'Interatividade', text: 'Solicitei que a votação fosse instantânea. Orientei a ferramenta a atualizar a tela de todos os usuários ao mesmo tempo sempre que alguém desse um "like".' }
+    ] },
+    { label: 'Fase 2', title: 'Refinamentos visuais e de UX', intro: 'A primeira versão que a IA gerou era funcional, mas fria. Atuei como Designer para mudar isso.', items: [
+      { lead: 'Paleta', text: 'Mudei o estilo "escritório" para um conceito "Tropical Tech", definindo o uso de cores mais vibrantes.' },
+      { lead: 'Cards de sugestões', text: 'A IA inicialmente criou listas simples com as sugestões. Pedi especificamente para alterar para um formato de "Grid" (colunas lado a lado), melhorando a experiência visual e permitindo que os usuários saibam quais sugestões são, sem precisar clicar em cada card.' },
+      { lead: 'Correção de fluxo', text: 'Percebi que era desnecessário selecionar a categoria da sugestão toda vez que o usuário quisesse criar. Orientei a IA a criar uma lógica: se estou na aba Transporte, o botão de adicionar já deve saber disso.' },
+      { lead: 'Prevenção de erros', text: 'Solicitei que o sistema avisasse o usuário caso tentasse duplicar uma sugestão ou colocar valores zerados, garantindo dados mais limpos.' }
+    ] },
+    { label: 'Fase 3', title: 'Estruturando o produto final', intro: 'Na reta final, guiei a transformação de um protótipo em um produto organizado.', items: [
+      { lead: 'Organização de páginas', text: 'Defini a separação entre a página pública (Landing Page) e a área do usuário logado, pedindo menus diferentes para cada contexto.' },
+      { lead: 'Adaptação para celular', text: 'Testei no mobile e pedi ajustes específicos nos tamanhos de botões e textos para garantir que funcionasse bem em qualquer tela.' }
+    ] }
+  ];
+
+  screenData = [
+    { name: 'Acesso', items: [['01-login', 'Login'], ['02-cadastro', 'Criação de conta']] },
+    { name: 'Home', items: [['03-home-vazia', 'Home sem viagem criada'], ['04-home-viagem', 'Home com viagem criada']] },
+    { name: 'Viagem', items: [['05-detalhes-viagem', 'Detalhes de uma viagem criada'], ['06-criar-sugestao', 'Criação de sugestão'], ['07-sugestao-criada', 'Sugestão criada']] },
+    { name: 'Compartilhar', items: [['08-convite-votar', 'Convite para votar'], ['09-convite-link', 'Link compartilhável e convite por e-mail']] },
+    { name: 'Conta', items: [['10-perfil', 'Perfil'], ['11-configuracoes', 'Configurações da conta']] }
+  ];
+
+  renderVals() {
+    const screens = this.screenData.map(g => ({
+      name: g.name,
+      items: g.items.map(([f, cap]) => {
+        const src = 'squadtrip/' + f + '.png';
+        return { src, cap, open: () => this.setState({ lightbox: src }) };
+      })
+    }));
+    return {
+      features: this.features,
+      steps: this.steps,
+      phases: this.phases,
+      screens,
+      lightbox: this.state.lightbox,
+      hasLightbox: !!this.state.lightbox,
+      closeLightbox: () => this.setState({ lightbox: null })
+    };
+  }
+}
+</script>
+</body>
+</html>
