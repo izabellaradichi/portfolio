@@ -111,7 +111,7 @@
       </div>
       <div style="grid-column:span 9; min-width:0;">
         <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 24px; color:#241a22;">De uma aula a um bot com cara de realidade</h2>
-        <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0; text-wrap:pretty;">Durante uma aula sobre aplicação de RAG, criei uma assistente para a UaiFly, uma agência de viagens fictícia. Em vez de seguir o exemplo do curso, criei um bot com base na realidade que vivi por anos: o dia a dia da emissão de bilhetes aéreos.</p>
+        <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0; text-wrap:pretty;">Durante uma aula sobre aplicação de RAG, criei uma assistente para a UaiFly, uma agência de viagens fictícia. Deixei o exemplo do curso de lado e criei um bot com base na realidade que vivi por anos: o dia a dia da emissão de bilhetes aéreos.</p>
       </div>
     </div>
   </section>
@@ -197,8 +197,7 @@
       </div>
     </div>
     <div style="max-width:1040px; margin:0 auto; padding:0 32px 32px;">
-      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Os textos e as escolhas de conteúdo são meus. Estrutura, design e código foram feitos com o Claude, da Anthropic.</p>
-      <p style="margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
+      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
     </div>
   </footer>
 
@@ -217,9 +216,9 @@ class Component extends DCLogic {
 
   blocks = [
     { lead: 'A construção técnica', text: 'O fluxo foi todo feito no n8n e integra OpenAI e Telegram, saindo do ambiente de testes do editor para uma interação real no celular, rodando localmente.' },
-    { lead: 'Base de conhecimento', text: 'Utilizei IA para gerar 100 perguntas fictícias (FAQ), e a minha contribuição foi na estratégia: usei minha experiência na área para definir os tópicos macro que a IA deveria abordar, garantindo que ela falasse sobre dores reais dos passageiros. O conteúdo disponibilizado foi bem grande.' },
-    { lead: 'RAG e Vector Store', text: 'Foi utilizado um banco de dados vetorial onde as FAQs são consultadas antes da assistente responder ao cliente, garantindo precisão.' },
-    { lead: 'Um aprendizado', text: 'Durante os testes, percebi que o bot misturava dados atuais com versões antigas de um outro arquivo, pois o banco de dados da IA estava "sujo". A solução foi ativar uma opção que garante a limpeza da memória a cada atualização. Um pequeno detalhezinho que eu descobri “fuçando” a ferramenta.' }
+    { lead: 'Base de conhecimento', text: 'Usei IA para gerar 100 perguntas fictícias (FAQ). Minha parte foi a estratégia: com a experiência na área, defini os grandes temas que a IA deveria cobrir, para que ela falasse dos problemas reais dos passageiros. O conteúdo ficou bem grande.' },
+    { lead: 'RAG e Vector Store', text: 'As FAQs ficam num banco de dados vetorial, e a assistente consulta esse banco antes de responder.' },
+    { lead: 'Um aprendizado', text: 'Durante os testes, percebi que o bot misturava dados atuais com versões antigas de um outro arquivo, porque o banco de dados da IA estava sujo. Resolvi ativando uma opção que limpa a memória a cada atualização. Um pequeno detalhezinho que eu descobri “fuçando” a ferramenta.' }
   ];
 
   renderVals() {

@@ -111,7 +111,7 @@
       </div>
       <div style="grid-column:span 9; min-width:0;">
         <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 24px; color:#241a22;">O desafio</h2>
-        <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0 0 18px; text-wrap:pretty;">O SquadTrip surgiu para resolver uma "dor" pessoal, mas muito comum: a dificuldade de organizar viagens com amigos sem brigas ou confusão.</p>
+        <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0 0 18px; text-wrap:pretty;">A ideia veio de um problema meu, e de muita gente: organizar viagem com amigos sem briga e sem confusão.</p>
         <p style="font-size:1rem; line-height:1.8; color:#241a22; margin:0; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">A ideia era trocar as planilhas por uma interface fácil de usar, com roteiros montados em conjunto e votações na hora.</p>
       </div>
     </div>
@@ -169,9 +169,9 @@
         </div>
         <div style="grid-column:span 9; min-width:0;">
           <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 24px; color:#241a22; text-wrap:pretty;">Como foi feito</h2>
-          <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0 0 18px; text-wrap:pretty;">Criei o SquadTrip e todo o seu design utilizando o <strong style="color:#241a22;">Lovable</strong>, uma ferramenta de inteligência artificial onde o código é gerado a partir de uma conversa em linguagem natural. Em conjunto, usei o <strong style="color:#241a22;">Gemini</strong>, que me auxiliou com prompts mais estruturados a partir das minhas ideias.</p>
-          <p style="font-size:1rem; line-height:1.8; color:#241a22; margin:0 0 18px; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">Eu não programei. Defini as regras e o design e fui guiando a IA na construção.</p>
-          <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0;">Dividi o projeto em 3 fases de evolução, e abaixo cito algumas melhorias feitas em cada fase:</p>
+          <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0 0 18px; text-wrap:pretty;">Criei o SquadTrip e todo o design dele com o <strong style="color:#241a22;">Lovable</strong>, uma ferramenta de IA que gera o código a partir de uma conversa. Junto com ele, usei o <strong style="color:#241a22;">Gemini</strong>, que me ajudou a transformar minhas ideias em prompts mais estruturados.</p>
+          <p style="font-size:1rem; line-height:1.8; color:#241a22; margin:0 0 18px; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">Defini as regras e o design, e a IA escreveu o código.</p>
+          <p style="font-size:1rem; line-height:1.8; color:#4a3f47; margin:0;">Dividi o projeto em 3 fases. Algumas melhorias de cada uma:</p>
         </div>
       </div>
       <div>
@@ -256,8 +256,7 @@
       </div>
     </div>
     <div style="max-width:1040px; margin:0 auto; padding:0 32px 32px;">
-      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Os textos e as escolhas de conteúdo são meus. Estrutura, design e código foram feitos com o Claude, da Anthropic.</p>
-      <p style="margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
+      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
     </div>
   </footer>
 
@@ -276,7 +275,7 @@ class Component extends DCLogic {
 
   features = [
     { title: 'Planejamento colaborativo', text: 'Todos os membros do grupo podem sugerir hospedagens, atividades e destinos.' },
-    { title: 'Votação democrática', text: 'Sistema de votação integrado para decidir datas e locais de forma justa.' },
+    { title: 'Votação democrática', text: 'Votação integrada para o grupo decidir datas e lugares.' },
     { title: 'Interação em tempo real', text: 'Comentários e discussões específicas para cada sugestão.' },
     { title: 'Notificações', text: 'Alertas sobre novas sugestões e resultados de votações.' }
   ];
@@ -289,20 +288,20 @@ class Component extends DCLogic {
   ];
 
   phases = [
-    { label: 'Fase 1', title: 'Definindo as regras do jogo (lógica)', intro: 'O primeiro passo foi "ensinar" a IA como o sistema deveria funcionar para não ter erros.', items: [
-      { lead: 'Estrutura', text: 'Pedi para a IA criar um sistema onde cada viagem fosse separada e segura.' },
-      { lead: 'Regras de negócio', text: 'Defini travas lógicas que a IA deveria implementar, como proibir que a data de "volta" fosse anterior à data de "ida".' },
-      { lead: 'Interatividade', text: 'Solicitei que a votação fosse instantânea. Orientei a ferramenta a atualizar a tela de todos os usuários ao mesmo tempo sempre que alguém desse um "like".' }
+    { label: 'Fase 1', title: 'Definindo as regras do jogo (lógica)', intro: 'O primeiro passo foi explicar para a IA como o sistema deveria funcionar, para evitar erros.', items: [
+      { lead: 'Estrutura', text: 'Cada viagem funciona separada das outras e com segurança.' },
+      { lead: 'Regras de negócio', text: 'Defini travas lógicas, como impedir que a data de volta fosse anterior à de ida.' },
+      { lead: 'Interatividade', text: 'A votação precisava ser instantânea: quando alguém vota, a tela de todo mundo atualiza na hora.' }
     ] },
-    { label: 'Fase 2', title: 'Refinamentos visuais e de UX', intro: 'A primeira versão que a IA gerou era funcional, mas fria. Atuei como Designer para mudar isso.', items: [
-      { lead: 'Paleta', text: 'Mudei o estilo "escritório" para um conceito "Tropical Tech", definindo o uso de cores mais vibrantes.' },
-      { lead: 'Cards de sugestões', text: 'A IA inicialmente criou listas simples com as sugestões. Pedi especificamente para alterar para um formato de "Grid" (colunas lado a lado), melhorando a experiência visual e permitindo que os usuários saibam quais sugestões são, sem precisar clicar em cada card.' },
-      { lead: 'Correção de fluxo', text: 'Percebi que era desnecessário selecionar a categoria da sugestão toda vez que o usuário quisesse criar. Orientei a IA a criar uma lógica: se estou na aba Transporte, o botão de adicionar já deve saber disso.' },
-      { lead: 'Prevenção de erros', text: 'Solicitei que o sistema avisasse o usuário caso tentasse duplicar uma sugestão ou colocar valores zerados, garantindo dados mais limpos.' }
+    { label: 'Fase 2', title: 'Refinamentos visuais e de UX', intro: 'A primeira versão que a IA gerou funcionava, mas era fria. Foi aí que entrei com o design.', items: [
+      { lead: 'Paleta', text: 'Troquei o visual de escritório por um conceito Tropical Tech, com cores mais vibrantes.' },
+      { lead: 'Cards de sugestões', text: 'A primeira versão mostrava as sugestões em lista. Troquei por uma grade de cards lado a lado, para dar para ver o que é cada sugestão sem clicar em uma por uma.' },
+      { lead: 'Correção de fluxo', text: 'Escolher a categoria toda vez que criava uma sugestão era desnecessário. Se a pessoa está na aba Transporte, o botão de adicionar já sabe disso.' },
+      { lead: 'Prevenção de erros', text: 'O sistema avisa quando alguém tenta duplicar uma sugestão ou deixar o valor zerado, e os dados ficam mais limpos.' }
     ] },
-    { label: 'Fase 3', title: 'Estruturando o produto final', intro: 'Na reta final, guiei a transformação de um protótipo em um produto organizado.', items: [
-      { lead: 'Organização de páginas', text: 'Defini a separação entre a página pública (Landing Page) e a área do usuário logado, pedindo menus diferentes para cada contexto.' },
-      { lead: 'Adaptação para celular', text: 'Testei no mobile e pedi ajustes específicos nos tamanhos de botões e textos para garantir que funcionasse bem em qualquer tela.' }
+    { label: 'Fase 3', title: 'Estruturando o produto final', intro: 'Na reta final, o protótipo virou um produto organizado.', items: [
+      { lead: 'Organização de páginas', text: 'Separei a página pública (landing page) da área de quem está logado, cada uma com o seu menu.' },
+      { lead: 'Adaptação para celular', text: 'Testei no celular e pedi ajustes no tamanho dos botões e dos textos para funcionar bem em qualquer tela.' }
     ] }
   ];
 

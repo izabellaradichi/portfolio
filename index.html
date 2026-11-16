@@ -128,15 +128,12 @@
             <div style="grid-column:span 3; min-width:0; font-size:1.02rem; font-weight:700; color:#241a22; line-height:1.4;">{{ s.title }}</div>
             <div style="grid-column:span 7; min-width:0;">
               <p style="font-size:0.98rem; line-height:1.7; color:#4a3f47; margin:0;">{{ s.text }}</p>
-              <sc-if value="{{ showInsights }}" hint-placeholder-val="{{ true }}">
+              <sc-if value="{{ showInsights }}" hint-placeholder-val="{{ true }}"><sc-if value="{{ s.insight }}" hint-placeholder-val="{{ false }}">
                 <p style="font-size:0.92rem; line-height:1.6; color:#6b5d66; font-style:italic; margin:12px 0 0;">{{ s.insight }}</p>
-              </sc-if>
+              </sc-if></sc-if>
             </div>
           </div>
         </sc-for>
-      </div>
-      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:8px 28px; padding-top:20px; border-top:1px solid rgba(36,26,34,0.18);">
-        <p data-reveal="line" style="grid-column:6 / -1; min-width:0; margin:0; font-size:1rem; line-height:1.75; color:#241a22; padding-left:20px; border-left:2px solid #c9563a; text-wrap:pretty;">Por ter passado por atendimento e suporte técnico antes de chegar ao UX Writing, entendo onde as conversas falham e escrevo pensando em resolver isso.</p>
       </div>
     </div>
   </section>
@@ -150,7 +147,7 @@
           <span style="width:120px; height:90px; border-radius:8px; flex-shrink:0; overflow:hidden; border:1px solid rgba(36,26,34,0.18); background:#fdf7f1; display:block;"><img src="thumbs/case-redesenhar.jpg" alt="" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover;"></span>
           <span style="flex:1; min-width:0;">
             <span style="display:block; font-family:'DM Serif Display', serif; font-size:1.25rem; line-height:1.25;">Redesenhar, <em style="font-style:italic;">evoluir</em>, criar</span>
-            <span style="display:block; font-size:0.92rem; line-height:1.6; color:#4a3f47; margin-top:6px;">Os fluxos de uma assistente conversacional para uma rede de shopping centers, de 2021 a 2026.</span>
+            <span style="display:block; font-size:0.92rem; line-height:1.6; color:#4a3f47; margin-top:6px;">Os fluxos de uma assistente conversacional para uma rede de shopping centers, de 2021 a 2025.</span>
             <span style="display:block; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#6b5d66; margin-top:10px;">Case real · design conversacional</span>
           </span>
           <span data-arrow="1" style="font-size:1rem; color:#a8523a; flex-shrink:0; margin-left:auto;">→</span>
@@ -231,6 +228,7 @@
               <span style="width:30px; height:30px; flex-shrink:0; border-radius:6px; border:1px solid rgba(36,26,34,0.24); display:flex; align-items:center; justify-content:center; font-size:1rem; line-height:1; color:#a8523a; transform:{{ j.rot }}; transition:transform .25s;">▾</span>
             </div>
             <sc-if value="{{ j.open }}" hint-placeholder-val="{{ false }}">
+              <sc-if value="{{ j.intro }}" hint-placeholder-val="{{ false }}"><p style="font-size:0.92rem; line-height:1.6; color:#241a22; margin:0 0 12px; max-width:680px; text-wrap:pretty;">{{ j.intro }}</p></sc-if>
               <ul style="list-style:none; margin:0; padding:0 0 18px; display:grid; gap:8px;">
                 <sc-for list="{{ j.bullets }}" as="bl" hint-placeholder-count="3">
                   <li style="font-size:0.92rem; line-height:1.6; color:#4a3f47; padding-left:20px; position:relative;"><span style="position:absolute; left:0; color:#c9563a; font-weight:700;">→</span>{{ bl }}</li>
@@ -260,7 +258,7 @@
       </div>
     </div>
     <div style="max-width:1040px; margin:0 auto; padding:0 32px 32px;">
-      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Os textos e as escolhas de conteúdo são meus. Estrutura, design e código foram feitos com o Claude, da Anthropic.</p>
+      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Os textos são meus. O site eu montei com a ajuda do Claude.</p>
       <p style="margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
     </div>
   </footer>
@@ -272,10 +270,10 @@ class Component extends DCLogic {
   state = { openJob: null };
 
   steps = [
-    { year: '2007 – 2020', title: 'Atendimento & operações', text: 'Call center, turismo e viagens aéreas: contato direto com o cliente e resolução de problemas no dia a dia.', insight: 'Aprendi a escutar o usuário e identificar onde a comunicação falha.' },
-    { year: '2020 – 2021', title: 'Suporte técnico', text: 'Diagnóstico de erros técnicos, análise de logs e colaboração com desenvolvimento para resolver casos complexos.', insight: 'Passei a entender a lógica por trás dos sistemas que geram essas falhas.' },
-    { year: '2021', title: 'UX Writing & Tech Writing', text: 'Reestruturação de uma Central de Ajuda com mais de 1.000 artigos usando técnicas de UX Writing, e auditoria de qualidade dos atendimentos.', insight: 'Passei a escrever pensando em evitar os problemas antes que eles aparecessem.' },
-    { year: '2021 – 2026', title: 'Design conversacional & IA', text: 'Fluxos para chatbots e agentes de IA Generativa, unindo tudo o que aprendi sobre a jornada do usuário.', insight: 'Nessa fase juntei o que aprendi antes: escutar o cliente, entender a lógica dos sistemas e escrever.' }
+    { year: '2007 – 2020', title: 'Atendimento & operações', text: 'Call center, turismo e viagens aéreas: contato direto com o cliente e resolução de problemas no dia a dia.', insight: '' },
+    { year: '2020 – 2021', title: 'Suporte técnico', text: 'Diagnóstico de erros técnicos, análise de logs e colaboração com desenvolvimento para resolver casos complexos.', insight: 'Lendo logs, comecei a entender por que os sistemas falhavam.' },
+    { year: '2021', title: 'UX Writing & Tech Writing', text: 'Reestruturação de uma Central de Ajuda com mais de 1.000 artigos usando técnicas de UX Writing, e auditoria de qualidade dos atendimentos.', insight: 'Reescrevendo os artigos, comecei a escrever para evitar o chamado antes que ele chegasse.' },
+    { year: '2021 – 2026', title: 'Design conversacional & IA', text: 'Fluxos para chatbots e agentes de IA Generativa, unindo tudo o que aprendi sobre a jornada do usuário. Depois, participei da criação dos prompts e do manual de tom e voz de um agente de IA do setor de telefonia, além dos testes e da homologação.', insight: '' }
   ];
 
   toolGroups = [
@@ -294,25 +292,27 @@ class Component extends DCLogic {
   ];
 
   jobsData = [
-    { period: 'dez/2021 – ago/2026', company: 'Compass UOL', role: 'Designer Conversacional · UX Writer', bullets: [
-      'Criação e evolução de fluxos conversacionais.',
-      'Criação e refinamento de prompts.',
-      'Análise de conversas, fallbacks e inputs não previstos para refinar frases de treinamento, intenções e entidades.',
-      'Gestão de conteúdo de FAQs para garantir a consistência do tom e voz.'
+    { period: 'dez/2021 – ago/2026', company: 'Compass UOL', role: 'Designer Conversacional · UX Writer', intro: 'De 2021 a 2025, cuidei dos fluxos de uma assistente para uma rede de shopping centers, no WhatsApp e no app. Depois, fui para um agente de IA do setor de telefonia.', bullets: [
+      'Criei e evoluí os fluxos da assistente, da expansão de 1 para 18 shoppings à migração de NLP (Dialogflow) para um modelo híbrido com IA generativa.',
+      'Participei da criação e dos ajustes dos prompts nos dois projetos.',
+      'Criei o manual de tom e voz da assistente e participei da criação do manual do agente.',
+      'Li conversas reais no Firebase para encontrar o que a assistente não entendia e transformar isso em FAQs, ajustes de fluxo e frases de treinamento.',
+      'Documentei os fluxos e montei protótipos navegáveis no Figma para validar as ideias antes do desenvolvimento.',
+      'Nos dois projetos, testei e homologuei as entregas junto com o time de desenvolvimento.'
     ] },
-    { period: 'jun/2020 – dez/2021', company: 'eNotas', role: 'Analista de Qualidade e Tech Writer · Analista de Suporte Técnico', bullets: [
-      'Reestruturei a Central de Ajuda, com mais de 1.000 artigos, aplicando técnicas de UX Writing.',
-      'Criei diversos artigos de suporte ao cliente, expandindo volume em 100%.',
-      'Investigação de erros técnicos utilizando Postman para análise de logs.'
+    { period: 'jun/2020 – dez/2021', company: 'eNotas', role: 'Analista de Qualidade e Tech Writer · Analista de Suporte Técnico', intro: 'Comecei no suporte técnico de um emissor de notas fiscais e depois fui para a área de qualidade, onde passei a escrever para o cliente.', bullets: [
+      'Atendi chamados técnicos, inclusive de contas estratégicas, investigando erros em logs JSON e XML com o Postman.',
+      'Reestruturei a central de ajuda com técnicas de UX Writing e cheguei a mais de 1.000 artigos publicados e revisados.',
+      'Fiz auditoria de qualidade nos atendimentos e transformei as dúvidas que mais se repetiam em novos artigos.',
+      'Treinei o time de suporte para que as respostas seguissem o que estava na base.'
     ] },
-    { period: 'mar – abr/2020', company: 'MaxMilhas', role: 'Analista de Atendimento e Operações', bullets: [
-      'Solução de problemas de clientes via Zendesk.',
-      'Emissão, cancelamento e remarcação de passagens aéreas.'
+    { period: 'mar – abr/2020', company: 'MaxMilhas', role: 'Analista de Atendimento e Operações', intro: '', bullets: [
+      'Atendi clientes pelo Zendesk, resolvendo alterações de viagem e tirando dúvidas.',
+      'Emiti, cancelei e remarquei passagens direto com as companhias aéreas.'
     ] },
-    { period: 'out/2012 – fev/2020', company: 'Viagens Master Operadora', role: 'Emissor Aéreo · Analista Administrativo', bullets: [
-      'Definição de fluxos e processos do setor, com autogestão e proatividade.',
-      'Emissão e reemissão de passagens aéreas em diversas plataformas.',
-      'Contato direto com times comercial, financeiro e de produtos.'
+    { period: 'out/2012 – fev/2020', company: 'Viagens Master Operadora', role: 'Emissor Aéreo · Analista Administrativo', intro: 'Foram quase 8 anos no setor aéreo de uma operadora de turismo.', bullets: [
+      'Cuidei dos processos do setor aéreo, da emissão de bilhetes no Galileo e nos sistemas das companhias até os bloqueios aéreos dos pacotes.',
+      'Dei suporte aos consultores de viagem e sugeri melhorias de processo junto às áreas comercial, financeira e de produtos.'
     ] }
   ];
 

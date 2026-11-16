@@ -106,6 +106,7 @@
               <span style="font-size:0.9rem; color:#6b5d66; letter-spacing:0.03em;">{{ j.period }}</span>
             </div>
             <div style="font-size:0.95rem; font-weight:600; color:#a8523a; margin-bottom:18px;">{{ j.company }}</div>
+            <sc-if value="{{ j.intro }}" hint-placeholder-val="{{ false }}"><p style="font-size:0.95rem; line-height:1.65; color:#241a22; margin:-4px 0 16px; max-width:680px; text-wrap:pretty;">{{ j.intro }}</p></sc-if>
             <ul style="list-style:none; margin:0; padding:0; display:grid; gap:10px;">
               <sc-for list="{{ j.bullets }}" as="b" hint-placeholder-count="4">
                 <li style="font-size:0.95rem; line-height:1.65; color:#4a3f47; padding-left:22px; position:relative;"><span style="position:absolute; left:0; color:#c9563a; font-weight:700;">→</span>{{ b }}</li>
@@ -170,8 +171,7 @@
       </div>
     </div>
     <div style="max-width:1040px; margin:0 auto; padding:0 32px 32px;">
-      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Os textos e as escolhas de conteúdo são meus. Estrutura, design e código foram feitos com o Claude, da Anthropic.</p>
-      <p style="margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
+      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
     </div>
   </footer>
 
@@ -180,48 +180,28 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   jobs = [
-    { company: 'Compass UOL', role: 'Designer Conversacional · UX Writer', period: 'dez/2021 → ago/2026', bullets: [
-      'Criação e evolução de fluxos conversacionais.',
-      'Análises de conversas para otimização do produto.',
-      'Criação e refinamento de prompts.',
-      'Testes e homologação de features desenvolvidas para garantir qualidade e fidelidade ao que foi pensado.',
-      'Análise de fallbacks e inputs não previstos para refinar frases de treinamento, intenções e entidades.',
-      'Gestão de conteúdo de FAQs para garantir a consistência do tom e voz.',
-      'Realização de refinamento e handoff técnico detalhado com o time de desenvolvimento.'
-    ] },
-    { company: 'eNotas Desenvolvimento de Software', role: 'Analista de Qualidade e Tech Writer', period: 'abr/2021 → dez/2021', bullets: [
-      'Reestruturei a Central de Ajuda, com mais de 1.000 artigos, aplicando técnicas de UX Writing.',
-      'Criei diversos artigos de suporte ao cliente, expandindo volume em 100%.',
-      'Auditoria de qualidade nos atendimentos para identificar gargalos.',
-      'Definição de processos da área de qualidade e treinamento do time de suporte.'
-    ] },
-    { company: 'eNotas Desenvolvimento de Software', role: 'Analista de Suporte Técnico Jr. II', period: 'jan/2021 → mar/2021', bullets: [
-      'Suporte técnico especializado a contas estratégicas.',
-      'Investigação de erros técnicos utilizando Postman para análise de logs.',
-      'Colaboração direta com o time de desenvolvimento para reportar bugs.',
-      'Apoio à liderança na melhoria dos fluxos de atendimento.'
-    ] },
-    { company: 'eNotas Desenvolvimento de Software', role: 'Analista de Suporte Técnico Jr.', period: 'jun/2020 → jan/2021', bullets: [
-      'Suporte técnico especializado via Zendesk.',
-      'Criação de artigos de suporte baseados em padrões de erros frequentes.'
-    ] },
-    { company: 'MaxMilhas', role: 'Analista de Atendimento e Operações', period: 'mar/2020 → abr/2020', bullets: [
-      'Solução de problemas de clientes via Zendesk.',
-      'Emissão, cancelamento e remarcação de passagens aéreas.',
-      'Contato ativo com companhias aéreas.',
-      'Escalação de problemas quando necessário.'
-    ] },
-    { company: 'Viagens Master Operadora', role: 'Analista II, Emissor Aéreo', period: 'mai/2014 → fev/2020', bullets: [
-      'Todos os processos operacionais ligados ao setor aéreo.',
-      'Definição de fluxos e processos do setor, com autogestão e proatividade.',
-      'Emissão e reemissão de passagens aéreas em diversas plataformas.',
-      'Solicitação de grupos aéreos privados e planejamento de bloqueios aéreos.',
-      'Contato direto com times comercial, financeiro e de produtos.'
-    ] },
-    { company: 'Viagens Master Operadora', role: 'Analista I, Administrativo', period: 'out/2012 → jan/2014', bullets: [
-      'Atividades administrativas e processos operacionais referentes a vendas.',
-      'Emissão de seguros viagem e liberação de vouchers para agências.'
-    ] }
+    { company: 'Compass UOL', role: 'Designer Conversacional · UX Writer', period: 'dez/2021 → ago/2026', intro: 'De 2021 a 2025, cuidei dos fluxos de uma assistente para uma rede de shopping centers, no WhatsApp e no app. Depois, fui para um agente de IA do setor de telefonia.', bullets: [
+      'Criei e evoluí os fluxos da assistente, da expansão de 1 para 18 shoppings à migração de NLP (Dialogflow) para um modelo híbrido com IA generativa.',
+      'Participei da criação e dos ajustes dos prompts nos dois projetos.',
+      'Criei o manual de tom e voz da assistente e participei da criação do manual do agente.',
+      'Li conversas reais no Firebase para encontrar o que a assistente não entendia e transformar isso em FAQs, ajustes de fluxo e frases de treinamento.',
+      'Documentei os fluxos e montei protótipos navegáveis no Figma para validar as ideias antes do desenvolvimento.',
+      'Nos dois projetos, testei e homologuei as entregas junto com o time de desenvolvimento.'
+    ]},
+    { company: 'eNotas', role: 'Analista de Qualidade e Tech Writer · Analista de Suporte Técnico', period: 'jun/2020 → dez/2021', intro: 'Comecei no suporte técnico de um emissor de notas fiscais e depois fui para a área de qualidade, onde passei a escrever para o cliente.', bullets: [
+      'Atendi chamados técnicos, inclusive de contas estratégicas, investigando erros em logs JSON e XML com o Postman.',
+      'Reestruturei a central de ajuda com técnicas de UX Writing e cheguei a mais de 1.000 artigos publicados e revisados.',
+      'Fiz auditoria de qualidade nos atendimentos e transformei as dúvidas que mais se repetiam em novos artigos.',
+      'Treinei o time de suporte para que as respostas seguissem o que estava na base.'
+    ]},
+    { company: 'MaxMilhas', role: 'Analista de Atendimento e Operações', period: 'mar/2020 → abr/2020', intro: '', bullets: [
+      'Atendi clientes pelo Zendesk, resolvendo alterações de viagem e tirando dúvidas.',
+      'Emiti, cancelei e remarquei passagens direto com as companhias aéreas.'
+    ]},
+    { company: 'Viagens Master Operadora', role: 'Emissor Aéreo · Analista Administrativo', period: 'out/2012 → fev/2020', intro: 'Foram quase 8 anos no setor aéreo de uma operadora de turismo.', bullets: [
+      'Cuidei dos processos do setor aéreo, da emissão de bilhetes no Galileo e nos sistemas das companhias até os bloqueios aéreos dos pacotes.',
+      'Dei suporte aos consultores de viagem e sugeri melhorias de processo junto às áreas comercial, financeira e de produtos.'
+    ]}
   ];
 
   toolGroups = [

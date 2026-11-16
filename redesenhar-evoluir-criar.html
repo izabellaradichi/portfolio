@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- head:inicio -->
-<meta name="description" content="Case real: os fluxos de uma assistente conversacional para uma rede de shopping centers, de 2021 a 2026.">
+<meta name="description" content="Case real: os fluxos de uma assistente conversacional para uma rede de shopping centers, de 2021 a 2025.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Izabella Radichi">
 <meta property="og:title" content="Redesenhar, evoluir, criar · Izabella Radichi">
-<meta property="og:description" content="Case real: os fluxos de uma assistente conversacional para uma rede de shopping centers, de 2021 a 2026.">
+<meta property="og:description" content="Case real: os fluxos de uma assistente conversacional para uma rede de shopping centers, de 2021 a 2025.">
 <meta property="og:url" content="https://izabellaradichi.pages.dev/redesenhar-evoluir-criar.html">
 <meta property="og:image" content="https://izabellaradichi.pages.dev/assets/compartilhar.jpg">
 <meta property="og:image:width" content="1200">
@@ -90,7 +90,7 @@
           <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">Case real · Design conversacional</span>
         </div>
         <h1 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(2.4rem,4.6vw,4rem); line-height:1.02; margin:0 0 18px; color:#241a22; text-wrap:balance;">Redesenhar, <em style="color:#a8523a; font-style:italic;">evoluir,</em> criar</h1>
-        <p style="font-size:1.1rem; line-height:1.65; color:#241a22; margin:0; max-width:680px; text-wrap:pretty;">Como foi desenhar os fluxos de uma assistente conversacional para uma rede de shopping centers, de 2021 a 2026.</p>
+        <p style="font-size:1.1rem; line-height:1.65; color:#241a22; margin:0; max-width:680px; text-wrap:pretty;">Como foi desenhar os fluxos de uma assistente conversacional para uma rede de shopping centers, de 2021 a 2025.</p>
       </div>
       <div style="grid-column:span 4; min-width:220px; display:grid; gap:0;">
         <div style="padding:14px 0; border-top:1px solid rgba(36,26,34,0.18);">
@@ -103,7 +103,7 @@
         </div>
         <div style="padding:14px 0; border-top:1px solid rgba(36,26,34,0.18);">
           <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Período</div>
-          <div style="font-size:1rem; font-weight:600; color:#241a22;">2021 – 2026</div>
+          <div style="font-size:1rem; font-weight:600; color:#241a22;">2021 – 2025</div>
         </div>
         <div style="padding:14px 0; border-top:1px solid rgba(36,26,34,0.18); border-bottom:1px solid rgba(36,26,34,0.18);">
           <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Canais</div>
@@ -247,7 +247,7 @@
           </div>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">E aí apareceu um segundo problema, dessa vez com o conteúdo.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Cada item da lista pode ter até 24 caracteres no título, e o nome do filme vinha de uma API externa, ou seja, não tínhamos controle nenhum sobre o tamanho. Um nome maior que o limite quebraria a lista inteira, e não dava para ficar conferindo isso no retorno da API.</p>
-          <p style="font-size:1rem; line-height:1.8; margin:0;">A saída foi tirar o nome do título. Cada opção passou a ter um emoji de cinema como título, e o nome do filme foi para o subtítulo, que aceita até 72 caracteres. Essa "regra" acabou valendo para todos os outros fluxos que listavam conteúdo vindo de fora, sempre que a quantidade de caracteres não estava sob nosso controle.</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0;">A saída foi tirar o nome do título. Cada opção passou a ter um emoji de cinema como título, e o nome do filme foi para o subtítulo, que aceita até 72 caracteres. Essa solução acabou valendo para todos os outros fluxos que listavam conteúdo vindo de fora, sempre que a quantidade de caracteres não estava sob nosso controle.</p>
           </div>
           </sc-if>
         </section>
@@ -357,7 +357,7 @@
         <!-- CONTEUDO -->
         <section id="conteudo" style="scroll-margin-top:110px; margin-bottom:32px;">
           <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.8rem; color:#241a22; margin:0 0 24px; text-wrap:pretty;">Desenhar para o que foge do controle</h2>
-          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Boa parte do que a assistente diz não está escrito no fluxo: ela consome esse conteúdo de outro lugar. O conteúdo vem de um painel alimentado pelas equipes operacionais, e cada uma é responsável pelo que preenche. Ou seja, eu desenhava a conversa sem saber exatamente o que ela ia dizer.</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Boa parte do que a assistente diz não está escrito no fluxo: o conteúdo é atualizado por outras equipes, fora da conversa. Ou seja, eu desenhava a conversa sem saber exatamente o que ela ia dizer.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 26px;">Quando você não controla o conteúdo, precisa desenhar para todas as formas que ele pode assumir. E isso se soma ao que pode dar errado do outro lado da conversa:</p>
               <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px;">
                 <sc-for list="{{ sadPaths }}" as="p" hint-placeholder-count="5">
@@ -366,7 +366,7 @@
               </div>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">E a resposta nunca era só avisar que deu errado. Quando a pessoa digitava um dado no formato errado, por exemplo, a mensagem explicava o que tinha acontecido sem colocar a culpa nela, dizia qual era o formato esperado e devolvia a chance de tentar de novo.</p>
           
-          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Logo no início eu tinha escrito o manual de tom e voz da assistente, partindo de uma dinâmica de personalidade que a empresa já tinha feito, e o marketing aprovou o resultado. Com ele em mãos, propus um processo de aprovação para o único conteúdo que dava para controlar, que eram as respostas das perguntas frequentes:</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Logo no início eu tinha escrito o manual de tom e voz da assistente, partindo da personalidade da marca, e o manual foi aprovado pelo cliente. Com ele em mãos, propus um processo de aprovação para o único conteúdo que dava para controlar, que eram as respostas das perguntas frequentes:</p>
 
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-bottom:18px;">
             <sc-for list="{{ approval }}" as="a" hint-placeholder-count="3">
@@ -390,7 +390,7 @@
           <p style="font-size:1rem; line-height:1.8; margin:0 0 24px;">Eu lia o feedback das pessoas: o que elas escreviam e a assistente não sabia responder, seja porque não entendia, seja porque não tinha o conteúdo.</p>
           <p style="font-size:1.1rem; line-height:1.75; color:#241a22; margin:0 0 24px; padding-left:26px; border-left:2px solid #c9563a; text-wrap:pretty;">Para mim, isso faz parte do trabalho de quem desenha conversa.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Nada disso virava mudança automaticamente. Por exemplo, uma pergunta que aparece muito nem sempre precisa virar FAQ, então cada padrão era analisado para decidir se fazia sentido uma FAQ nova, uma frase de treino ou um ajuste no fluxo.</p>
-          <p style="font-size:1rem; line-height:1.8; margin:0;">Foi assim que a base de FAQs, que começou copiada dos sites dos shoppings, foi crescendo com o que as pessoas de fato perguntavam.</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0;">Foi assim que a base de FAQs, que começou com as informações básicas de cada shopping, foi crescendo com o que as pessoas de fato perguntavam.</p>
         </section>
 
         </div>
@@ -408,7 +408,7 @@
           </figure>
 
           <p style="font-size:1rem; line-height:1.8; margin:0 0 32px;">A diferença entre as duas primeiras barras é o resumo do trabalho: a assistente cresceu bem mais em profundidade do que em número de funcionalidades.</p>
-          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">A terceira barra mostra uma mudança que não é de tamanho: em 2021 a assistente respondia e a conversa acabava ali. Em 2025, seis funcionalidades guardavam algo que era do usuário e devolviam quando ele solicitava, como os cupons que ele já tinha pegado ou as inscrições que já tinha feito.</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">A terceira barra mostra outra mudança: em 2021 a assistente respondia e a conversa acabava ali. Em 2025, seis funcionalidades guardavam algo que era do usuário e devolviam quando ele pedia, como os cupons que ele já tinha pegado ou as inscrições que já tinha feito.</p>
 
 
           <figure style="margin:0 0 24px;">
@@ -442,7 +442,7 @@
           <div style="background:#f6e5dc; border-radius:8px; padding:36px 40px; border-left:5px solid #a8523a; margin-bottom:28px;">
             <p style="font-size:1.15rem; line-height:1.7; margin:0; font-weight:700; color:#241a22;">Teria buscado formas de me envolver mais com dados desde o começo.</p>
           </div>
-          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Durante boa parte do tempo em que estive no projeto, existia uma equipe de curadoria cuidando das métricas, e eu ficava concentrada na escrita e no desenho. Fazia sentido na divisão de trabalho da época.</p>
+          <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Durante boa parte do tempo em que estive no projeto, as métricas ficavam com outra equipe, e eu ficava concentrada na escrita e no desenho. Fazia sentido na divisão de trabalho da época.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0 0 20px;">Mas, escrevendo este case, percebi o quanto senti falta disso: eu consigo explicar cada decisão que tomei e por quê, mas não consigo dizer o que cada uma delas mudou depois que foi para o ar.</p>
           <p style="font-size:1rem; line-height:1.8; margin:0;">Hoje eu faria diferente. Não necessariamente medindo eu mesma, mas combinando antes o que precisaria ser observado em cada mudança, buscando esse dado depois e registrando ao lado do fluxo.</p>
         </section>
@@ -482,8 +482,7 @@
       </div>
     </div>
     <div style="max-width:1040px; margin:0 auto; padding:0 32px 32px;">
-      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0 0 18px; max-width:640px; font-size:0.9rem; line-height:1.7; color:#6b5d66;">Os textos e as escolhas de conteúdo são meus. Estrutura, design e código foram feitos com o Claude, da Anthropic.</p>
-      <p style="margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
+      <p style="border-top:1px solid rgba(36,26,34,0.18); padding-top:24px; margin:0; font-size:0.86rem; color:#76686f;">© 2026 Izabella Radichi · Designer Conversacional &amp; UX Writer · Belo Horizonte, MG</p>
     </div>
   </footer>
 
@@ -538,17 +537,17 @@ class Component extends DCLogic {
 
   metaData = [
     { label: 'Papel', value: 'Designer Conversacional e UX Writer', tint: '#ebe2da', radius: '8px' },
-    { label: 'Período', value: '2021 – 2026', tint: '#f6e5dc', radius: '8px' },
+    { label: 'Período', value: '2021 – 2025', tint: '#f6e5dc', radius: '8px' },
     { label: 'Produto', value: 'Assistente virtual de uma rede de shopping centers', tint: '#f6e5dc', radius: '8px' },
     { label: 'Canais', value: 'Messenger e WhatsApp', tint: '#ebe2da', radius: '8px' }
   ];
 
   roleData = [
-    'Criação e evolução de fluxos conversacionais, documentados no Figma com todas as variáveis e ramificações',
-    'Protótipos navegáveis de alta fidelidade para validação com o time',
-    'Redação do manual de tom e voz e curadoria do conteúdo das FAQs',
-    'Análise de conversas reais, fallbacks e entradas não previstas para refinar frases de treinamento, intenções e entidades',
-    'Alinhamento técnico, testes e homologação com o time de desenvolvimento'
+    'Criei e evoluí fluxos conversacionais, documentados no Figma com todas as variáveis e ramificações.',
+    'Fiz protótipos navegáveis de alta fidelidade para validar com o time.',
+    'Escrevi o manual de tom e voz e fiz a curadoria do conteúdo das FAQs.',
+    'Analisei conversas reais, fallbacks e entradas não previstas para refinar frases de treinamento, intenções e entidades.',
+    'Alinhei os detalhes técnicos com o time de desenvolvimento e fiz os testes e a homologação.'
   ];
 
   evolutionsData = [
@@ -571,16 +570,16 @@ class Component extends DCLogic {
       why: 'O cupom resgatado passava a ser do usuário, mas a assistente não guardava isso em lugar nenhum. Sem uma forma de recuperar, era rolar o histórico da conversa atrás do próprio cupom. E quem tivesse apagado a conversa perdia o acesso de vez.'
     },
     {
-      title: 'As FAQs saíram da planilha.',
-      before: 'As respostas ficavam documentadas numa planilha, e os desenvolvedores precisavam deixá-las fixas no código. Qualquer mudança passava por esse caminho.',
-      after: 'Cada shopping passou a preencher as suas em um painel, e a assistente só consumia o que estava lá.',
-      why: 'Com um shopping só, a planilha dava conta. Com a rede inteira, virou gargalo, e dar autonomia às unidades resolvia isso. Só que aí qualquer resposta podia ir para o ar sem ninguém revisar o tom e a clareza, então incluí uma etapa de aprovação, que conto mais adiante.'
+      title: 'Cada shopping passou a cuidar das suas FAQs.',
+      before: 'Qualquer mudança dependia de uma atualização técnica.',
+      after: 'Cada shopping passou a cuidar das próprias respostas, e a assistente passou a usar o que eles publicavam.',
+      why: 'Com um shopping só, fazia sentido como era. Com a rede inteira, virou gargalo, e dar autonomia às unidades resolvia isso. Só que aí qualquer resposta podia ir para o ar sem ninguém revisar o tom e a clareza, então incluí uma etapa de aprovação, que conto mais adiante.'
     }
   ];
 
   hardPartsData = [
-    { num: '01', title: 'Ele não termina na resposta.', text: 'Consultar, incluir e cancelar são operações sobre algo que pertence ao usuário. A conversa deixa de ser só responder e passa a administrar.', radius: '8px' },
-    { num: '02', title: 'Ele exige desenhar o desfazer.', text: 'E se a pessoa quiser cancelar só parte da inscrição? O fluxo precisa saber o que está ativo, mostrar só o que dá para cancelar e confirmar o que sai e o que continua valendo. Desenhar isso obriga a pensar em estados, não em caminhos.', radius: '8px' }
+    { num: '01', title: 'Ele não termina na resposta.', text: 'Consultar, incluir e cancelar são operações sobre algo que pertence ao usuário. A conversa precisa administrar o que já é do usuário.', radius: '8px' },
+    { num: '02', title: 'Ele exige desenhar o desfazer.', text: 'E se a pessoa quiser cancelar só parte da inscrição? O fluxo precisa saber o que está ativo, mostrar só o que dá para cancelar e confirmar o que sai e o que continua valendo. Desenhar isso obriga a saber em que estado cada inscrição está.', radius: '8px' }
   ];
 
   approvalData = [
