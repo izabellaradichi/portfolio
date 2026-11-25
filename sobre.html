@@ -97,14 +97,21 @@
         <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">Sobre</span>
       </div>
       <h1 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(2.4rem,4.6vw,4rem); line-height:1.02; margin:0 0 18px; color:#241a22;">Prazer, <em style="font-style:italic; color:#a8523a;">Izabella.</em></h1>
-      <p style="font-size:1.1rem; line-height:1.65; color:#241a22; margin:0; max-width:680px; text-wrap:pretty;">Sou bióloga de formação e trabalho com tecnologia desde 2020. Antes disso, passei por call center, loja, turismo e emissão de passagens aéreas. Aqui estão as etapas desse caminho, as ferramentas que uso e o que já escrevi.</p>
+      <p style="font-size:1.1rem; line-height:1.65; color:#241a22; margin:0; max-width:680px; text-wrap:pretty;">Trabalho com tecnologia desde 2020. Antes disso, passei por call center, educação ambiental em parques, loja, turismo e emissão de passagens aéreas. Aqui estão as etapas desse caminho, as ferramentas que uso e o que já escrevi.</p>
       <a href="https://drive.google.com/file/d/1AcSt-jYdWibsrv8BCrk3hZ93xqoiMMYv/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; margin-top:32px; background:#a03d27; color:#fff; padding:15px 30px; font-size:0.88rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="background:#b8492e; color:#fff;">Baixar currículo em PDF ↓</a>
-    </div>
-    <div style="grid-column:span 4; min-width:220px; display:grid; gap:0;">
-      <div style="padding:16px 0; border-top:1px solid rgba(36,26,34,0.18); border-bottom:1px solid rgba(36,26,34,0.18);">
-        <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Localização</div>
-        <div style="font-size:1rem; font-weight:600; color:#241a22;">Belo Horizonte, MG</div>
+      <div style="display:flex; flex-wrap:wrap; gap:0 28px; margin-top:28px;">
+        <div style="flex:1 1 240px; min-width:0; padding:16px 0; border-top:1px solid rgba(36,26,34,0.18); border-bottom:1px solid rgba(36,26,34,0.18);">
+          <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Trajetória</div>
+          <div style="font-size:1rem; font-weight:600; color:#241a22;">Mais de 15 anos entre atendimento, turismo e tecnologia</div>
+        </div>
+        <div style="flex:1 0 auto; min-width:0; padding:16px 0; border-top:1px solid rgba(36,26,34,0.18); border-bottom:1px solid rgba(36,26,34,0.18);">
+          <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin-bottom:6px;">Disponibilidade</div>
+          <div style="font-size:1rem; font-weight:600; color:#241a22; white-space:nowrap;">Remoto, híbrido ou presencial em BH</div>
+        </div>
       </div>
+    </div>
+    <div data-photo="1" style="grid-column:span 4; min-width:0; display:flex; justify-content:flex-end; align-self:center;">
+      <img data-reveal="fade" data-parallax="1" src="assets/izabella.jpg" alt="Foto de Izabella Radichi" style="display:block; width:100%; max-width:300px; aspect-ratio:1/1; border-radius:8px; object-fit:cover; object-position:center 12%; border:1px solid rgba(36,26,34,0.18); filter:grayscale(0.25) contrast(1.05);">
     </div>
   </section>
 
@@ -140,19 +147,27 @@
     <div data-grid="1" style="max-width:1040px; margin:0 auto; padding:32px 32px; display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px;">
       <div style="grid-column:1 / -1; min-width:0;">
         <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">Formação</div>
-        <div style="display:flex; flex-direction:column; gap:4px; padding:15px 0; border-bottom:1px solid rgba(36,26,34,0.16); margin-top:12px;">
+        <h3 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.5rem; line-height:1.2; color:#241a22; margin:22px 0 4px;">Graduação</h3>
+        <div style="display:flex; flex-direction:column; gap:4px; padding:15px 0; border-bottom:1px solid rgba(36,26,34,0.16);">
           <span style="font-size:0.95rem; line-height:1.5; color:#241a22;">Bacharelado em Ciências Biológicas</span>
           <span style="font-size:0.85rem; color:#6b5d66; letter-spacing:0.03em;">Faculdade Pitágoras · 2008 – 2012</span>
         </div>
-        <div style="margin-top:12px; font-size:0.9rem; color:#6b5d66;">Cursos e certificações</div>
+        <h3 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.5rem; line-height:1.2; color:#241a22; margin:36px 0 0;">Cursos e certificações</h3>
       </div>
       <div style="grid-column:1 / -1; min-width:0;">
-        <sc-for list="{{ courses }}" as="c" hint-placeholder-count="12">
-          <div style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:15px 0; border-bottom:1px solid rgba(36,26,34,0.16);">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:28px 40px; margin-top:18px;">
+          <sc-for list="{{ courseGroups }}" as="cg" hint-placeholder-count="2">
+            <div style="min-width:0;">
+              <h3 style="font-size:0.8rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66; margin:0 0 12px; padding-bottom:10px; border-bottom:1px solid rgba(36,26,34,0.18);">{{ cg.name }}</h3>
+              <sc-for list="{{ cg.items }}" as="c" hint-placeholder-count="6">
+                <div style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:15px 0; border-bottom:1px solid rgba(36,26,34,0.16);">
             <span style="font-size:0.95rem; line-height:1.5; color:#241a22;">{{ c.name }}</span>
             <span style="font-size:0.85rem; color:#6b5d66; text-align:right; flex-shrink:0; letter-spacing:0.03em;">{{ c.org }}</span>
           </div>
-        </sc-for>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
       </div>
     </div>
   </section>
@@ -178,12 +193,13 @@
   <section id="artigos" style="scroll-margin-top:80px; border-top:1px solid rgba(36,26,34,0.24);">
     <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
         <div data-reveal="1" style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a; margin-bottom:14px;">Artigos</div>
-        <div style="border-top:1px solid rgba(36,26,34,0.18);">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:12px;">
           <sc-for list="{{ articles }}" as="a" hint-placeholder-count="4">
-            <a data-article="1" href="{{ a.url }}" target="_blank" rel="noopener noreferrer" style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:18px 0; border-bottom:1px solid rgba(36,26,34,0.18); color:#241a22;" style-hover="color:#a8523a;">
-              <span style="flex:1 1 auto; min-width:0; font-family:'DM Serif Display', serif; font-weight:400; font-size:1.1rem; line-height:1.3;">{{ a.title }}</span>
-              <span style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#6b5d66; white-space:nowrap; flex-shrink:0;">{{ a.tag }}</span>
-              <span data-arrow="1" style="font-size:1rem; color:#a8523a; flex-shrink:0;">↗</span>
+            <a data-article="1" href="{{ a.url }}" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; gap:20px; padding:18px 20px; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:8px; color:#241a22; transition:transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s;" style-hover="color:#a8523a; transform:translateY(-3px); box-shadow:0 8px 22px rgba(36,26,34,0.08);">
+              <span style="flex:1 1 auto; min-width:0; display:block;">
+                <span style="display:block; font-family:'DM Serif Display', serif; font-weight:400; font-size:1.1rem; line-height:1.3;">{{ a.title }}<span data-arrow="1" style="font-family:'Work Sans', system-ui, sans-serif; font-size:1rem; color:#a8523a; margin-left:8px;">↗</span></span>
+                <span style="display:block; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#6b5d66; margin-top:8px;">{{ a.tag }}</span>
+              </span>
             </a>
           </sc-for>
         </div>
@@ -372,6 +388,24 @@ class Component extends DCLogic {
     { name: 'UX Writing: Microcopy e Conteúdo para Experiência do Usuário', org: 'EBAC' }
   ];
 
+  courseGroups = [
+    { name: 'Design conversacional & escrita', items: [
+      { name: 'Curadoria Técnica de chatbot com IA/NLU', org: "Let's Bot" },
+      { name: 'Introdução a IA e Apps Conversacionais', org: 'Blip' },
+      { name: 'UX Writing: Microcopy e Conteúdo para Experiência do Usuário', org: 'EBAC' },
+      { name: 'UX Writing, linguagem acessível e inclusiva na prática', org: 'EBAC' },
+      { name: 'Tech Writing e Inteligência Artificial', org: 'Escola de Conteúdo' }
+    ] },
+    { name: 'IA, automação & dados', items: [
+      { name: 'Agentes de IA, Princípios e Fundamentos', org: 'Udemy' },
+      { name: 'IA Generativa, LLMs e Agentes de IA na Prática', org: 'Udemy' },
+      { name: 'Trilha n8n', org: 'AI Academy Luiza Sangalli' },
+      { name: 'Claude 101 e Claude Code 101', org: 'Anthropic' },
+      { name: 'Dominando o Claude AI para Máxima Produtividade', org: 'Udemy' },
+      { name: 'Introdução à Análise de Dados', org: 'Fundação Bradesco' }
+    ] }
+  ];
+
   recs = [
     { quote: 'Criativa e com sólido conhecimento técnico, sempre trouxe para o produto que atuamos soluções fundamentadas em boas práticas de UI/UX.', name: 'Pedro Marafiga', role: 'Software Engineer · Compass UOL' },
     { quote: 'Tive o prazer de trabalhar com a Iza em um projeto desafiador de criação de agentes de IA, e ela fez toda a diferença no time.', name: 'Stheffani Garcia', role: 'UX Writer Sênior' },
@@ -392,7 +426,7 @@ class Component extends DCLogic {
       steps: this.steps,
       recs: this.recs,
       cvJobs: this.cvJobs,
-      courses: this.courses,
+      courseGroups: this.courseGroups,
       toolGroups: this.toolGroups.map(g => ({ ...g, list: g.items.join(' · ') })),
       articles: this.articles,
       showInsights: this.props.showInsights ?? true,
