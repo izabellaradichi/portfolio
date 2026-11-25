@@ -65,9 +65,8 @@
       <a href="index.html#topo" style="font-family:'DM Serif Display', serif; font-size:1.75rem; white-space:nowrap; flex-shrink:0; line-height:1; color:#241a22; letter-spacing:0.01em;">Izabella Radichi</a>
       <nav style="display:flex; gap:24px; flex-wrap:wrap; align-items:center;">
         <a href="index.html" style="display:inline-flex; align-items:center; gap:6px; font-size:0.95rem; font-weight:600; color:#a8523a; padding-bottom:3px; border-bottom:1px solid transparent; transition:border-color .2s;" style-hover="border-color:#a8523a;">← Início</a>
-        <a href="index.html#trajetoria" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Trajetória</a>
         <a href="index.html#case" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Cases</a>
-        <a href="index.html#artigos" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Artigos</a>
+        <a href="sobre.html" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Sobre</a>
         <a href="curriculo.html" style="font-size:0.95rem; font-weight:500; color:#4a3f47; padding-bottom:3px; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;" style-hover="color:#a8523a; border-color:#a8523a;">Currículo</a>
         <a href="#contato" style="font-size:0.88rem; font-weight:600; color:#241a22; border:1px solid rgba(36,26,34,0.35); padding:7px 16px; border-radius:6px; white-space:nowrap; transition:border-color .2s, color .2s;" style-hover="border-color:#a8523a; color:#a8523a;">Contato</a>
       </nav>
@@ -117,36 +116,14 @@
     </div>
   </section>
 
-  <section style="border-top:1px solid rgba(36,26,34,0.18);">
-    <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
-      <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:24px;">
-        <div style="grid-column:1 / -1; min-width:0;">
-          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">02 · Funcionalidades</div>
-        </div>
-        <div style="grid-column:1 / -1; min-width:0;">
-          <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0; color:#241a22;">Principais funcionalidades</h2>
-        </div>
-      </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0; border-top:1px solid rgba(36,26,34,0.18);">
-        <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
-          <div style="padding:30px 28px 30px 0; border-bottom:1px solid rgba(36,26,34,0.18);">
-            <h3 style="font-size:1.02rem; font-weight:700; color:#241a22; margin:0 0 10px;">{{ f.title }}</h3>
-            <p style="font-size:0.95rem; line-height:1.65; color:#4a3f47; margin:0;">{{ f.text }}</p>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
   <section style="border-top:1px solid rgba(36,26,34,0.18); background:#eee3d8;">
     <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
       <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:24px;">
         <div style="grid-column:1 / -1; min-width:0;">
-          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">03 · Como funciona</div>
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">02 · Como funciona</div>
         </div>
         <div style="grid-column:1 / -1; min-width:0;">
           <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 12px; color:#241a22;">A jornada do usuário</h2>
-          <p style="font-size:1rem; color:#6b5d66; margin:0;">Como funciona:</p>
         </div>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
@@ -165,7 +142,7 @@
     <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
       <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:32px;">
         <div style="grid-column:1 / -1; min-width:0;">
-          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">04 · Bastidores</div>
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">03 · Bastidores</div>
         </div>
         <div style="grid-column:span 9; min-width:0;">
           <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 24px; color:#241a22; text-wrap:pretty;">Como foi feito</h2>
@@ -202,7 +179,7 @@
     <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
       <div data-grid="1" style="display:grid; grid-template-columns:repeat(12,1fr); gap:14px 28px; margin-bottom:24px;">
         <div style="grid-column:1 / -1; min-width:0;">
-          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">05 · Telas</div>
+          <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">04 · Telas</div>
         </div>
         <div style="grid-column:1 / -1; min-width:0;">
           <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; margin:0 0 12px; color:#241a22;">Algumas telas</h2>
@@ -233,9 +210,8 @@
     <div style="max-width:1040px; margin:0 auto; padding:32px 32px; display:flex; justify-content:space-between; align-items:baseline; gap:24px 40px; flex-wrap:wrap;">
       <span style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#6b5d66;">Outros cases</span>
       <div style="display:flex; gap:20px 40px; flex-wrap:wrap;">
-        <a href="redesenhar-evoluir-criar.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Redesenhar, <em style="font-style:italic; color:#a8523a;">evoluir</em>, criar →</a>
+        <a href="redesenhar-evoluir-criar.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Assistente virtual de uma rede de shoppings →</a>
         <a href="uaibot.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Uai<em style="font-style:italic; color:#a8523a;">Bot</em> →</a>
-        <a href="notas-fiscais.html" style="font-family:'DM Serif Display', serif; font-size:1.35rem; color:#241a22;" style-hover="color:#a8523a;">Organização de <em style="font-style:italic; color:#a8523a;">notas fiscais</em> →</a>
       </div>
     </div>
   </section>
@@ -281,8 +257,8 @@ class Component extends DCLogic {
   ];
 
   steps = [
-    { n: '01', title: 'Crie sua viagem', text: 'Defina o destino inicial, datas e dê um nome para a aventura.' },
-    { n: '02', title: 'Convide o Squad', text: 'Compartilhe um link único de convite para reunir a turma.' },
+    { n: '01', title: 'Crie sua viagem', text: 'Defina o destino, as datas e o nome da viagem.' },
+    { n: '02', title: 'Convide o grupo', text: 'Compartilhe um link único de convite para reunir a turma.' },
     { n: '03', title: 'Faça sugestões', text: 'O grupo adiciona opções de hospedagem, transporte e lazer.' },
     { n: '04', title: 'Vote e decida', text: 'As pessoas votam nas opções favoritas e o grupo pode montar o itinerário com base nisso.' }
   ];
