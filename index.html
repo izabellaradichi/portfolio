@@ -75,7 +75,9 @@
     @media (prefers-reduced-motion: reduce) { [data-marquee] { animation: none; } [data-marquee-wrap] { overflow-x:auto !important; } [data-marquee-dup] { display:none !important; } }
     @keyframes chat-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
     [data-chat-in] { animation: chat-in .22s ease-out both; }
-    @media (prefers-reduced-motion: reduce) { [data-chat-in] { animation:none; } }
+    @keyframes chat-dot { 0%, 60%, 100% { transform:translateY(0); opacity:.45; } 30% { transform:translateY(-4px); opacity:1; } }
+    [data-dot] { animation: chat-dot 0.9s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { [data-chat-in], [data-dot] { animation:none; } }
   </style>
 </helmet>
 
@@ -115,10 +117,13 @@
         <span style="font-size:0.95rem; font-weight:600; color:#241a22;">Iza</span>
         <span style="width:8px; height:8px; border-radius:50%; background:#3f8a5a; display:block; flex-shrink:0;"></span>
       </div>
-      <sc-if value="{{ chatTyping1 }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22; color:#6b5d66; font-style:italic; font-size:0.88rem;">digitando...</div></sc-if>
+      <sc-if value="{{ chatTyping1 }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" aria-label="Iza está digitando" style="align-self:flex-start; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:13px 15px; display:flex; gap:5px; align-items:center;"><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0s;"></span><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0.15s;"></span><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0.3s;"></span></div></sc-if>
       <sc-if value="{{ chatB1 }}" hint-placeholder-val="{{ true }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22;">Oi! Eu sou a Iza.</div></sc-if>
-      <sc-if value="{{ chatTyping2 }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22; color:#6b5d66; font-style:italic; font-size:0.88rem;">digitando...</div></sc-if>
+      <sc-if value="{{ chatTyping2 }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" aria-label="Iza está digitando" style="align-self:flex-start; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:13px 15px; display:flex; gap:5px; align-items:center;"><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0s;"></span><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0.15s;"></span><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0.3s;"></span></div></sc-if>
       <sc-if value="{{ chatB2 }}" hint-placeholder-val="{{ true }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22;">Quer ver o que eu já fiz ou conhecer um pouco da minha trajetória?</div></sc-if>
+      <sc-if value="{{ chatHasSent }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" style="align-self:flex-end; background:#a8523a; color:#fff; border-radius:16px 16px 4px 16px; padding:10px 15px; font-size:0.98rem; line-height:1.5;">{{ chatSent }}</div></sc-if>
+      <sc-if value="{{ chatReplyTyping }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" aria-label="Iza está digitando" style="align-self:flex-start; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:13px 15px; display:flex; gap:5px; align-items:center;"><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0s;"></span><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0.15s;"></span><span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:#6b5d66; display:block; animation-delay:0.3s;"></span></div></sc-if>
+      <sc-if value="{{ chatHasAnswer }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22;">{{ chatAnswer }}</div></sc-if>
       <sc-if value="{{ chatShowReplies }}" hint-placeholder-val="{{ true }}">
         <div data-chat-in="1" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;">
           <sc-for list="{{ chatReplies }}" as="r" hint-placeholder-count="3">
@@ -126,7 +131,6 @@
           </sc-for>
         </div>
       </sc-if>
-      <sc-if value="{{ chatHasSent }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" style="align-self:flex-end; background:#a8523a; color:#fff; border-radius:16px 16px 4px 16px; padding:10px 15px; font-size:0.98rem; line-height:1.5;">{{ chatSent }}</div></sc-if>
     </div>
   </section>
 
@@ -249,7 +253,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showInsights&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;},&quot;numberedSections&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
 class Component extends DCLogic {
-  state = { openJob: null, chatStep: 0, chatSent: '' };
+  state = { openJob: null, chatStep: 0, chatSent: '', chatPhase: 0, chatAnswer: '' };
 
   steps = [
     { year: '2007 – 2020', title: 'Atendimento & operações', text: 'Call center, educação ambiental em parques, loja de shopping, turismo e emissão de passagens aéreas: contato direto com o cliente e resolução de problemas no dia a dia.', insight: '' },
@@ -305,23 +309,48 @@ class Component extends DCLogic {
     this._chatT = [1, 2, 3, 4, 5].map((s, i) => setTimeout(() => this.setState({ chatStep: s }), [80, 420, 640, 980, 1220][i]));
   }
 
+  resetChat() {
+    (this._replyT || []).forEach(clearTimeout); this._replyT = [];
+    this.setState({ chatSent: '', chatPhase: 0, chatAnswer: '' });
+  }
+
   pickReply(e, r) {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    this.setState({ chatSent: r.label });
-    if (r.external) { setTimeout(() => this.setState({ chatSent: '' }), 1600); return; }
-    e.preventDefault();
-    setTimeout(() => {
+    (this._replyT || []).forEach(clearTimeout);
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const go = () => {
       if (r.href.charAt(0) === '#') {
         const el = document.querySelector(r.href);
-        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 70, behavior: 'smooth' });
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 70, behavior: reduce ? 'auto' : 'smooth' });
         history.replaceState(null, '', r.href);
-        setTimeout(() => this.setState({ chatSent: '' }), 900);
+        this._replyT.push(setTimeout(() => this.resetChat(), 900));
+      } else if (r.external) {
+        this._replyT.push(setTimeout(() => this.resetChat(), 1200));
       } else { location.href = r.href; }
-    }, 400);
+    };
+    if (r.external) {
+      this.setState({ chatSent: r.label, chatPhase: 2, chatAnswer: r.answer });
+      this._replyT = [];
+      go();
+      return;
+    }
+    e.preventDefault();
+    if (reduce) {
+      this.setState({ chatSent: r.label, chatPhase: 2, chatAnswer: r.answer });
+      this._replyT = [setTimeout(go, 400)];
+      return;
+    }
+    this.setState({ chatSent: r.label, chatPhase: 1, chatAnswer: r.answer });
+    this._replyT = [
+      setTimeout(() => this.setState({ chatPhase: 2 }), 650),
+      setTimeout(go, 1100)
+    ];
   }
 
   componentDidMount() {
     this.startChat();
+    this._onShow = (ev) => { if (ev.persisted) this.resetChat(); };
+    window.addEventListener('pageshow', this._onShow);
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const bar = document.querySelector('[data-progress]');
     const photo = document.querySelector('[data-parallax]');
@@ -383,6 +412,8 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     (this._chatT || []).forEach(clearTimeout);
+    (this._replyT || []).forEach(clearTimeout);
+    window.removeEventListener('pageshow', this._onShow);
     removeEventListener('scroll', this._onScroll);
     removeEventListener('scroll', this._check);
     removeEventListener('resize', this._check);
@@ -413,13 +444,16 @@ class Component extends DCLogic {
       chatB1: this.state.chatStep >= 2,
       chatTyping2: this.state.chatStep === 3,
       chatB2: this.state.chatStep >= 4,
-      chatShowReplies: this.state.chatStep >= 5 && !this.state.chatSent,
+      chatShowReplies: this.state.chatStep >= 5,
+      chatReplyTyping: this.state.chatPhase === 1,
+      chatHasAnswer: this.state.chatPhase === 2,
+      chatAnswer: this.state.chatAnswer,
       chatHasSent: !!this.state.chatSent,
       chatSent: this.state.chatSent,
       chatReplies: [
-        { label: 'Ver cases', href: '#case', target: '_self' },
-        { label: 'Conhecer minha trajetória', href: 'sobre.html', target: '_self' },
-        { label: 'Baixar currículo', href: 'https://drive.google.com/file/d/1AcSt-jYdWibsrv8BCrk3hZ93xqoiMMYv/view?usp=sharing', target: '_blank', external: true }
+        { label: 'Ver cases', href: '#case', target: '_self', answer: 'Bora! Tá logo aqui embaixo.' },
+        { label: 'Conhecer minha trajetória', href: 'sobre.html', target: '_self', answer: 'Vou te levar pro Sobre.' },
+        { label: 'Baixar currículo', href: 'https://drive.google.com/file/d/1AcSt-jYdWibsrv8BCrk3hZ93xqoiMMYv/view?usp=sharing', target: '_blank', external: true, answer: 'Prontinho, abrindo o PDF.' }
       ].map(r => Object.assign({}, r, { onClick: (e) => this.pickReply(e, r) })),
       toolGroups: this.toolGroups.map(g => ({ ...g, list: g.items.join(' · ') })),
       articles: this.articles,
