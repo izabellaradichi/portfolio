@@ -449,7 +449,7 @@ class Component extends DCLogic {
       chatSent: this.state.chatSent,
       chatReplies: [
         { label: 'Ver cases', href: '#case', target: '_self', answer: 'Bora! Tá logo aqui embaixo.' },
-        { label: 'Conhecer minha trajetória', href: 'sobre.html', target: '_self', answer: 'Vou te levar pro Sobre.' },
+        { label: 'Conhecer minha trajetória', href: 'sobre.html', target: '_self', answer: 'Vou te contar um pouco mais de mim!' },
         { label: 'Baixar currículo', href: 'https://drive.google.com/file/d/1AcSt-jYdWibsrv8BCrk3hZ93xqoiMMYv/view?usp=sharing', target: '_blank', external: true, answer: 'Prontinho, abrindo o PDF.' }
       ].map(r => Object.assign({}, r, { onClick: (e) => this.pickReply(e, r) })),
       toolGroups: this.toolGroups.map(g => ({ ...g, list: g.items.join(' · ') })),
