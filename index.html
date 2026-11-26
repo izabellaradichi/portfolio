@@ -75,6 +75,9 @@
     @media (prefers-reduced-motion: reduce) { [data-marquee] { animation: none; } [data-marquee-wrap] { overflow-x:auto !important; } [data-marquee-dup] { display:none !important; } }
     @keyframes chat-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
     [data-chat-in] { animation: chat-in .22s ease-out both; }
+    [data-reply]:focus { outline:none; }
+    [data-reply]:focus-visible { outline:1.5px solid #a8523a; outline-offset:3px; }
+    @media (hover:hover) { [data-reply]:hover { background:#a8523a !important; color:#fff !important; } }
     @keyframes chat-dot { 0%, 60%, 100% { transform:translateY(0); opacity:.45; } 30% { transform:translateY(-4px); opacity:1; } }
     [data-dot] { animation: chat-dot 0.9s ease-in-out infinite; }
     @media (prefers-reduced-motion: reduce) { [data-chat-in], [data-dot] { animation:none; } }
@@ -127,7 +130,7 @@
       <sc-if value="{{ chatShowReplies }}" hint-placeholder-val="{{ true }}">
         <div data-chat-in="1" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;">
           <sc-for list="{{ chatReplies }}" as="r" hint-placeholder-count="3">
-            <a href="{{ r.href }}" target="{{ r.target }}" rel="noopener noreferrer" onClick="{{ r.onClick }}" style="display:inline-block; white-space:nowrap; border:1px solid #a8523a; color:#a8523a; background:transparent; padding:8px 16px; border-radius:999px; font-size:0.9rem; font-weight:600; transition:background .2s, color .2s;" style-hover="background:#a8523a; color:#fff;" style-focus="background:#a8523a; color:#fff; outline:2px solid #241a22; outline-offset:2px;">{{ r.label }}</a>
+            <a href="{{ r.href }}" target="{{ r.target }}" rel="noopener noreferrer" onClick="{{ r.onClick }}" data-reply="1" style="display:inline-block; white-space:nowrap; border:1px solid #a8523a; color:#a8523a; background:transparent; padding:8px 16px; border-radius:999px; font-size:0.9rem; font-weight:600; transition:background .2s, color .2s;">{{ r.label }}</a>
           </sc-for>
         </div>
       </sc-if>
@@ -311,6 +314,8 @@ class Component extends DCLogic {
 
   resetChat() {
     (this._replyT || []).forEach(clearTimeout); this._replyT = [];
+    const f = document.activeElement;
+    if (f && f.hasAttribute && f.hasAttribute('data-reply') && !(f.matches && f.matches(':focus-visible'))) f.blur();
     this.setState({ chatSent: '', chatPhase: 0, chatAnswer: '' });
   }
 
