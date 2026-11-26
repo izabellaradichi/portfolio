@@ -73,7 +73,9 @@
     [data-marquee-wrap]:hover [data-marquee], [data-marquee-wrap]:focus-within [data-marquee] { animation-play-state: paused; }
     @keyframes rec-scroll { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 8px)); } }
     @media (prefers-reduced-motion: reduce) { [data-marquee] { animation: none; } [data-marquee-wrap] { overflow-x:auto !important; } [data-marquee-dup] { display:none !important; } }
-    @media (max-width:900px) { [data-hero-art] svg { max-width:280px !important; } }
+    @keyframes chat-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    [data-chat-in] { animation: chat-in .22s ease-out both; }
+    @media (prefers-reduced-motion: reduce) { [data-chat-in] { animation:none; } }
   </style>
 </helmet>
 
@@ -101,43 +103,44 @@
       <p data-reveal="1" style="font-size:1.05rem; line-height:1.7; color:#4a3f47; margin:0 0 18px; max-width:560px; text-wrap:pretty;">Designer Conversacional há 5 anos, criando fluxos e prompts para chatbots e agentes de IA. Antes disso, trabalhei com atendimento, suporte técnico e central de ajuda.</p>
       <div data-reveal="1" style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
         <span style="width:7px; height:7px; background:#c9563a; display:block; flex-shrink:0;"></span>
-        <span style="font-size:0.85rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#6b5d66;">Belo Horizonte, MG · Remoto, híbrido ou presencial</span>
+        <span style="font-size:0.95rem; font-weight:500; color:#6b5d66;">Belo Horizonte, MG · Remoto, híbrido ou presencial</span>
       </div>
       <div data-reveal="1" style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a href="https://www.linkedin.com/in/izabellaradichi/" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; background:#a03d27; color:#fff; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="background:#b8492e; color:#fff;">Ver LinkedIn</a>
-        <a href="https://drive.google.com/file/d/1AcSt-jYdWibsrv8BCrk3hZ93xqoiMMYv/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; border:1px solid rgba(36,26,34,0.3); color:#241a22; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="border-color:#a8523a; color:#a8523a;">Baixar currículo</a>
+        <a href="https://www.linkedin.com/in/izabellaradichi/" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; background:#a03d27; color:#fff; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700;" style-hover="background:#b8492e; color:#fff;">Ver LinkedIn</a>
       </div>
     </div>
-    <div data-reveal="fade" data-hero-art="1" style="min-width:0; align-self:center; display:flex; align-items:center; justify-content:center;">
-        <svg viewBox="0 0 420 300" role="img" aria-label="Ilustração: um headset de atendimento ligado por um caminho pontilhado a um celular com dois balões de conversa" style="display:block; width:100%; max-width:340px; height:auto;">
-          <path d="M96 168 C 150 250, 175 70, 230 130 S 270 230, 292 170" fill="none" stroke="#2b1f29" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.5 14"></path>
-          <path d="M46 128 C 46 78, 126 78, 126 128" fill="none" stroke="#2b1f29" stroke-width="7" stroke-linecap="round"></path>
-          <rect x="34" y="120" width="26" height="46" rx="10" fill="#e0734f" stroke="#2b1f29" stroke-width="6"></rect>
-          <rect x="112" y="120" width="26" height="46" rx="10" fill="#e0734f" stroke="#2b1f29" stroke-width="6"></rect>
-          <path d="M47 166 C 50 196, 74 204, 92 200" fill="none" stroke="#2b1f29" stroke-width="6" stroke-linecap="round"></path>
-          <rect x="88" y="192" width="18" height="14" rx="6" fill="#f8e1cf" stroke="#2b1f29" stroke-width="5"></rect>
-          <rect x="292" y="52" width="104" height="196" rx="20" fill="#fdf7f1" stroke="#2b1f29" stroke-width="7"></rect>
-          <path d="M330 70 L 358 70" stroke="#2b1f29" stroke-width="5" stroke-linecap="round"></path>
-          <path d="M306 96 h70 a8 8 0 0 1 8 8 v28 a8 8 0 0 1 -8 8 h-52 l-12 12 v-12 h-6 a8 8 0 0 1 -8 -8 v-28 a8 8 0 0 1 8 -8 z" fill="#e0734f" stroke="#2b1f29" stroke-width="5" stroke-linejoin="round"></path>
-          <path d="M318 112 h48 M318 124 h34" stroke="#2b1f29" stroke-width="4" stroke-linecap="round"></path>
-          <path d="M312 166 h70 a8 8 0 0 1 8 8 v26 a8 8 0 0 1 -8 8 h-6 v12 l-12 -12 h-52 a8 8 0 0 1 -8 -8 v-26 a8 8 0 0 1 8 -8 z" fill="#f8e1cf" stroke="#2b1f29" stroke-width="5" stroke-linejoin="round"></path>
-          <path d="M324 182 h46 M324 194 h30" stroke="#2b1f29" stroke-width="4" stroke-linecap="round"></path>
-          <path d="M20 96 l12 8 M14 116 l14 2 M30 80 l8 12" stroke="#2b1f29" stroke-width="4" stroke-linecap="round"></path>
-          <path d="M404 40 l-8 12 M412 62 l-13 4" stroke="#6f9a7d" stroke-width="4" stroke-linecap="round"></path>
-        </svg>
+    <div data-chat="1" style="min-width:0; align-self:center; display:flex; flex-direction:column; gap:10px; max-width:400px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <img src="assets/izabella.jpg" alt="" style="width:36px; height:36px; border-radius:50%; object-fit:cover; object-position:center 12%; border:1px solid rgba(36,26,34,0.18); flex-shrink:0;">
+        <span style="font-size:0.95rem; font-weight:600; color:#241a22;">Iza</span>
+        <span style="width:8px; height:8px; border-radius:50%; background:#3f8a5a; display:block; flex-shrink:0;"></span>
+      </div>
+      <sc-if value="{{ chatTyping1 }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22; color:#6b5d66; font-style:italic; font-size:0.88rem;">digitando...</div></sc-if>
+      <sc-if value="{{ chatB1 }}" hint-placeholder-val="{{ true }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22;">Oi! Eu sou a Iza.</div></sc-if>
+      <sc-if value="{{ chatTyping2 }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22; color:#6b5d66; font-style:italic; font-size:0.88rem;">digitando...</div></sc-if>
+      <sc-if value="{{ chatB2 }}" hint-placeholder-val="{{ true }}"><div data-chat-in="1" style="align-self:flex-start; max-width:100%; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:16px 16px 16px 4px; padding:10px 15px; font-size:0.98rem; line-height:1.5; color:#241a22;">Quer ver o que eu já fiz ou conhecer um pouco da minha trajetória?</div></sc-if>
+      <sc-if value="{{ chatShowReplies }}" hint-placeholder-val="{{ true }}">
+        <div data-chat-in="1" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;">
+          <sc-for list="{{ chatReplies }}" as="r" hint-placeholder-count="3">
+            <a href="{{ r.href }}" target="{{ r.target }}" rel="noopener noreferrer" onClick="{{ r.onClick }}" style="display:inline-block; white-space:nowrap; border:1px solid #a8523a; color:#a8523a; background:transparent; padding:8px 16px; border-radius:999px; font-size:0.9rem; font-weight:600; transition:background .2s, color .2s;" style-hover="background:#a8523a; color:#fff;" style-focus="background:#a8523a; color:#fff; outline:2px solid #241a22; outline-offset:2px;">{{ r.label }}</a>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ chatHasSent }}" hint-placeholder-val="{{ false }}"><div data-chat-in="1" style="align-self:flex-end; background:#a8523a; color:#fff; border-radius:16px 16px 4px 16px; padding:10px 15px; font-size:0.98rem; line-height:1.5;">{{ chatSent }}</div></sc-if>
     </div>
   </section>
 
-  <section id="case" style="scroll-margin-top:80px; border-top:1px solid rgba(36,26,34,0.24);">
+  <section id="case" style="scroll-margin-top:80px;">
     <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
       <div data-reveal="1" style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a; margin-bottom:14px;">Cases</div>
+      <h2 data-reveal="clip" style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.3rem,1.8vw,1.5rem); line-height:1.15; margin:0 0 22px; color:#241a22; text-wrap:pretty;">O que eu já <em style="font-style:italic; color:#a8523a;">fiz</em></h2>
       <div style="display:grid; gap:12px;">
         <a data-case="1" href="redesenhar-evoluir-criar.html" style="display:flex; align-items:center; gap:18px; padding:18px 20px; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:8px; color:#241a22; transition:transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s;" style-hover="color:#a8523a; transform:translateY(-3px); box-shadow:0 8px 22px rgba(36,26,34,0.08);">
           <span style="width:120px; height:90px; border-radius:8px; flex-shrink:0; overflow:hidden; border:1px solid rgba(36,26,34,0.18); background:#fdf7f1; display:block;"><img src="thumbs/case-redesenhar.jpg" alt="" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover;"></span>
           <span style="flex:1; min-width:0;">
             <span style="display:block; font-family:'DM Serif Display', serif; font-size:1.25rem; line-height:1.25;">Assistente virtual de uma rede de shoppings</span>
             <span style="display:block; font-size:0.92rem; line-height:1.6; color:#4a3f47; margin-top:6px;">Os fluxos de uma assistente conversacional que passou de 1 para 18 shoppings entre 2021 e 2025, e as melhorias que surgiram lendo as conversas reais.</span>
-            <span style="display:block; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#6b5d66; margin-top:10px;">Case real · design conversacional</span>
+            <span style="display:inline-block; font-size:0.8rem; font-weight:600; line-height:1.4; color:#4a3f47; background:#eee3d8; padding:3px 10px; border-radius:999px; margin-top:10px;">Case real · Design conversacional</span>
           </span>
           <span data-arrow="1" style="font-size:1rem; color:#a8523a; flex-shrink:0; margin-left:auto;">→</span>
         </a>
@@ -146,7 +149,7 @@
           <span style="flex:1; min-width:0;">
             <span style="display:block; font-family:'DM Serif Display', serif; font-size:1.25rem; line-height:1.25;">SquadTrip</span>
             <span style="display:block; font-size:0.92rem; line-height:1.6; color:#4a3f47; margin-top:6px;">Uma aplicação web para planejar viagens em grupo, criada com IA a partir de conversa em linguagem natural.</span>
-            <span style="display:block; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#6b5d66; margin-top:10px;">Produto com IA · projeto pessoal</span>
+            <span style="display:inline-block; font-size:0.8rem; font-weight:600; line-height:1.4; color:#4a3f47; background:#eee3d8; padding:3px 10px; border-radius:999px; margin-top:10px;">Produto com IA · Projeto pessoal</span>
           </span>
           <span data-arrow="1" style="font-size:1rem; color:#a8523a; flex-shrink:0; margin-left:auto;">→</span>
         </a>
@@ -155,7 +158,7 @@
           <span style="flex:1; min-width:0;">
             <span style="display:block; font-family:'DM Serif Display', serif; font-size:1.25rem; line-height:1.25;">UaiBot</span>
             <span style="display:block; font-size:0.92rem; line-height:1.6; color:#4a3f47; margin-top:6px;">Chatbot de turismo com RAG, feito no n8n com OpenAI e Telegram.</span>
-            <span style="display:block; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#6b5d66; margin-top:10px;">Automação com IA · projeto de estudo</span>
+            <span style="display:inline-block; font-size:0.8rem; font-weight:600; line-height:1.4; color:#4a3f47; background:#eee3d8; padding:3px 10px; border-radius:999px; margin-top:10px;">Automação com IA · Projeto de estudo</span>
           </span>
           <span data-arrow="1" style="font-size:1rem; color:#a8523a; flex-shrink:0; margin-left:auto;">→</span>
         </a>
@@ -163,7 +166,7 @@
     </div>
   </section>
 
-  <section id="sobre" style="scroll-margin-top:80px; border-top:1px solid rgba(36,26,34,0.24);">
+  <section id="sobre" style="scroll-margin-top:80px;">
     <div style="max-width:1040px; margin:0 auto; padding:32px 32px;">
       <div data-reveal="1" style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a; margin-bottom:14px;">Sobre</div>
       <h2 data-reveal="clip" style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.3rem,1.8vw,1.5rem); line-height:1.15; margin:0 0 22px; color:#241a22; text-wrap:pretty;">Do atendimento ao <em style="font-style:italic; color:#a8523a;">design conversacional</em></h2>
@@ -185,13 +188,16 @@
           <div style="font-size:1.02rem; font-weight:700; color:#241a22; line-height:1.4;">Design conversacional & IA</div>
         </div>
       </div>
-      <a href="sobre.html" style="display:inline-block; white-space:nowrap; border:1px solid rgba(36,26,34,0.3); color:#241a22; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="border-color:#a8523a; color:#a8523a;">Ver trajetória completa →</a>
+      <a href="sobre.html" style="display:inline-block; white-space:nowrap; border:1px solid rgba(36,26,34,0.3); color:#241a22; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700;" style-hover="border-color:#a8523a; color:#a8523a;">Ver trajetória completa →</a>
     </div>
   </section>
 
-  <section id="recomendacoes" style="scroll-margin-top:80px; border-top:1px solid rgba(36,26,34,0.24); background:#eee3d8;">
-    <div style="max-width:1040px; margin:0 auto; padding:32px 32px 20px; display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;">
-      <div data-reveal="1" style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">Recomendações</div>
+  <section id="recomendacoes" style="scroll-margin-top:80px; background:#eee3d8;">
+    <div style="max-width:1040px; margin:0 auto; padding:32px 32px 20px; display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+      <div>
+        <div data-reveal="1" style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">Recomendações</div>
+        <h2 data-reveal="clip" style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.3rem,1.8vw,1.5rem); line-height:1.15; margin:14px 0 0; color:#241a22; text-wrap:pretty;">Quem já trabalhou <em style="font-style:italic; color:#a8523a;">comigo</em></h2>
+      </div>
       <a href="https://www.linkedin.com/in/izabellaradichi/details/recommendations/" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem; font-weight:600; color:#a8523a;">Ver no LinkedIn <span data-arrow="1">↗</span></a>
     </div>
     <div data-marquee-wrap="1" style="overflow:hidden; padding:0 0 36px; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);">
@@ -218,7 +224,7 @@
     </div>
   </section>
 
-  <footer id="contato" style="scroll-margin-top:80px; border-top:1px solid rgba(36,26,34,0.24);">
+  <footer id="contato" style="scroll-margin-top:80px;">
     <div data-grid="1" style="max-width:1040px; margin:0 auto; padding:32px 32px 24px; display:grid; grid-template-columns:repeat(12,1fr); gap:28px; align-items:end;">
       <div style="grid-column:1 / -1; min-width:0;">
         <div style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(36,26,34,0.24); background:#fffdfb; padding:8px 14px; border-radius:6px; margin-bottom:16px;">
@@ -228,8 +234,8 @@
         <h2 style="font-family:'DM Serif Display', serif; font-weight:400; font-size:1.4rem; line-height:1.2; margin:0 0 12px; color:#241a22; text-wrap:balance;">Obrigada por ter chegado <em style="font-style:italic; color:#a8523a;">até aqui.</em></h2>
         <p style="font-size:1rem; color:#4a3f47; margin:0 0 20px;">Quer falar sobre o que viu?</p>
         <div style="display:flex; gap:14px; flex-wrap:wrap;">
-          <a href="https://www.linkedin.com/in/izabellaradichi/" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; background:#a03d27; color:#fff; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="background:#b8492e; color:#fff;">LinkedIn</a>
-          <a href="mailto:radichiizabella@gmail.com" style="display:inline-block; white-space:nowrap; flex-shrink:0; border:1px solid rgba(36,26,34,0.3); color:#241a22; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;" style-hover="border-color:#a8523a; color:#a8523a;">E-mail</a>
+          <a href="https://www.linkedin.com/in/izabellaradichi/" target="_blank" rel="noopener noreferrer" style="display:inline-block; white-space:nowrap; flex-shrink:0; background:#a03d27; color:#fff; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700;" style-hover="background:#b8492e; color:#fff;">LinkedIn</a>
+          <a href="mailto:radichiizabella@gmail.com" style="display:inline-block; white-space:nowrap; flex-shrink:0; border:1px solid rgba(36,26,34,0.3); color:#241a22; padding:11px 22px; border-radius:6px; font-size:0.85rem; font-weight:700;" style-hover="border-color:#a8523a; color:#a8523a;">E-mail</a>
         </div>
       </div>
     </div>
@@ -243,7 +249,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showInsights&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;},&quot;numberedSections&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
 class Component extends DCLogic {
-  state = { openJob: null };
+  state = { openJob: null, chatStep: 0, chatSent: '' };
 
   steps = [
     { year: '2007 – 2020', title: 'Atendimento & operações', text: 'Call center, educação ambiental em parques, loja de shopping, turismo e emissão de passagens aéreas: contato direto com o cliente e resolução de problemas no dia a dia.', insight: '' },
@@ -293,7 +299,29 @@ class Component extends DCLogic {
     ] }
   ];
 
+  startChat() {
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { this.setState({ chatStep: 5 }); return; }
+    this._chatT = [1, 2, 3, 4, 5].map((s, i) => setTimeout(() => this.setState({ chatStep: s }), [80, 420, 640, 980, 1220][i]));
+  }
+
+  pickReply(e, r) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    this.setState({ chatSent: r.label });
+    if (r.external) { setTimeout(() => this.setState({ chatSent: '' }), 1600); return; }
+    e.preventDefault();
+    setTimeout(() => {
+      if (r.href.charAt(0) === '#') {
+        const el = document.querySelector(r.href);
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 70, behavior: 'smooth' });
+        history.replaceState(null, '', r.href);
+        setTimeout(() => this.setState({ chatSent: '' }), 900);
+      } else { location.href = r.href; }
+    }, 400);
+  }
+
   componentDidMount() {
+    this.startChat();
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const bar = document.querySelector('[data-progress]');
     const photo = document.querySelector('[data-parallax]');
@@ -354,6 +382,7 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount() {
+    (this._chatT || []).forEach(clearTimeout);
     removeEventListener('scroll', this._onScroll);
     removeEventListener('scroll', this._check);
     removeEventListener('resize', this._check);
@@ -380,6 +409,18 @@ class Component extends DCLogic {
       jobs,
       steps: this.steps,
       recs: this.recs,
+      chatTyping1: this.state.chatStep === 1,
+      chatB1: this.state.chatStep >= 2,
+      chatTyping2: this.state.chatStep === 3,
+      chatB2: this.state.chatStep >= 4,
+      chatShowReplies: this.state.chatStep >= 5 && !this.state.chatSent,
+      chatHasSent: !!this.state.chatSent,
+      chatSent: this.state.chatSent,
+      chatReplies: [
+        { label: 'Ver cases', href: '#case', target: '_self' },
+        { label: 'Conhecer minha trajetória', href: 'sobre.html', target: '_self' },
+        { label: 'Baixar currículo', href: 'https://drive.google.com/file/d/1AcSt-jYdWibsrv8BCrk3hZ93xqoiMMYv/view?usp=sharing', target: '_blank', external: true }
+      ].map(r => Object.assign({}, r, { onClick: (e) => this.pickReply(e, r) })),
       toolGroups: this.toolGroups.map(g => ({ ...g, list: g.items.join(' · ') })),
       articles: this.articles,
       showInsights: this.props.showInsights ?? true,
