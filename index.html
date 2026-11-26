@@ -315,7 +315,8 @@ class Component extends DCLogic {
   }
 
   pickReply(e, r) {
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
+    e.preventDefault();
     (this._replyT || []).forEach(clearTimeout);
     const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     const go = () => {
@@ -325,16 +326,11 @@ class Component extends DCLogic {
         history.replaceState(null, '', r.href);
         this._replyT.push(setTimeout(() => this.resetChat(), 900));
       } else if (r.external) {
-        this._replyT.push(setTimeout(() => this.resetChat(), 1200));
+        const w = window.open(r.href, '_blank');
+        if (w) { try { w.opener = null; } catch (err) {} this._replyT.push(setTimeout(() => this.resetChat(), 1500)); }
+        else { location.href = r.href; }
       } else { location.href = r.href; }
     };
-    if (r.external) {
-      this.setState({ chatSent: r.label, chatPhase: 2, chatAnswer: r.answer });
-      this._replyT = [];
-      go();
-      return;
-    }
-    e.preventDefault();
     if (reduce) {
       this.setState({ chatSent: r.label, chatPhase: 2, chatAnswer: r.answer });
       this._replyT = [setTimeout(go, 400)];
@@ -342,14 +338,15 @@ class Component extends DCLogic {
     }
     this.setState({ chatSent: r.label, chatPhase: 1, chatAnswer: r.answer });
     this._replyT = [
-      setTimeout(() => this.setState({ chatPhase: 2 }), 650),
+      setTimeout(() => this.setState({ chatPhase: 2 }), 600),
       setTimeout(go, 1100)
     ];
   }
 
   componentDidMount() {
     this.startChat();
-    this._onShow = (ev) => { if (ev.persisted) this.resetChat(); };
+    this.resetChat();
+    this._onShow = () => this.resetChat();
     window.addEventListener('pageshow', this._onShow);
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const bar = document.querySelector('[data-progress]');
