@@ -69,10 +69,8 @@
       [data-photo] { order:-1; justify-content:flex-start !important; }
       [data-photo] img { max-width:120px !important; }
     }
-    [data-marquee] { display:flex; gap:16px; width:max-content; animation: rec-scroll 90s linear infinite; }
-    [data-marquee-wrap]:hover [data-marquee], [data-marquee-wrap]:focus-within [data-marquee] { animation-play-state: paused; }
-    @keyframes rec-scroll { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 8px)); } }
-    @media (prefers-reduced-motion: reduce) { [data-marquee] { animation: none; } [data-marquee-wrap] { overflow-x:auto !important; } [data-marquee-dup] { display:none !important; } }
+    [data-rec-grid] { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+    @media (max-width:760px) { [data-rec-grid] { grid-template-columns:1fr; } }
     @keyframes chat-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
     [data-chat-in] { animation: chat-in .22s ease-out both; }
     [data-reply]:focus { outline:none; }
@@ -205,22 +203,12 @@
         <div data-reveal="1" style="font-size:0.8rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#a8523a;">Recomendações</div>
         <h2 data-reveal="clip" style="font-family:'DM Serif Display', serif; font-weight:400; font-size:clamp(1.3rem,1.8vw,1.5rem); line-height:1.15; margin:14px 0 0; color:#241a22; text-wrap:pretty;">Quem já trabalhou <em style="font-style:italic; color:#a8523a;">comigo</em></h2>
       </div>
-      <a href="https://www.linkedin.com/in/izabellaradichi/details/recommendations/" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem; font-weight:600; color:#a8523a;">Ver no LinkedIn <span data-arrow="1">↗</span></a>
     </div>
-    <div data-marquee-wrap="1" style="overflow:hidden; padding:0 0 36px; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);">
-      <div data-marquee="1" style="padding:0 32px;">
+    <div style="max-width:1040px; margin:0 auto; padding:0 32px 40px; display:grid; gap:20px; justify-items:start;">
+      <div data-rec-grid="1" style="display:grid; gap:16px; width:100%;">
           <sc-for list="{{ recs }}" as="r" hint-placeholder-count="4">
-            <figure style="margin:0; width:340px; flex-shrink:0; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:8px; padding:22px 24px; display:flex; flex-direction:column; justify-content:space-between; gap:18px;">
-              <blockquote style="margin:0; font-family:'DM Serif Display', serif; font-size:1.12rem; line-height:1.45; color:#241a22; text-wrap:pretty;">“{{ r.quote }}”</blockquote>
-              <figcaption style="display:grid; gap:2px;">
-                <span style="font-size:0.9rem; font-weight:700; color:#241a22;">{{ r.name }}</span>
-                <span style="font-size:0.84rem; color:#6b5d66;">{{ r.role }}</span>
-              </figcaption>
-            </figure>
-          </sc-for>
-          <sc-for list="{{ recs }}" as="r" hint-placeholder-count="4">
-            <figure data-marquee-dup="1" aria-hidden="true" style="margin:0; width:340px; flex-shrink:0; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:8px; padding:22px 24px; display:flex; flex-direction:column; justify-content:space-between; gap:18px;">
-              <blockquote style="margin:0; font-family:'DM Serif Display', serif; font-size:1.12rem; line-height:1.45; color:#241a22; text-wrap:pretty;">“{{ r.quote }}”</blockquote>
+            <figure style="margin:0; min-width:0; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; justify-content:space-between; gap:18px;">
+              <blockquote style="margin:0; font-family:'Work Sans', sans-serif; font-style:normal; font-weight:400; font-size:14px; line-height:1.55; letter-spacing:normal; color:#4a3f47; text-wrap:pretty;">“{{ r.quote }}”</blockquote>
               <figcaption style="display:grid; gap:2px;">
                 <span style="font-size:0.9rem; font-weight:700; color:#241a22;">{{ r.name }}</span>
                 <span style="font-size:0.84rem; color:#6b5d66;">{{ r.role }}</span>
@@ -228,6 +216,7 @@
             </figure>
           </sc-for>
       </div>
+      <a href="https://www.linkedin.com/in/izabellaradichi/details/recommendations/" target="_blank" rel="noopener noreferrer" data-reply="1" style="display:inline-block; white-space:normal; text-align:left; border:1px solid #a8523a; color:#a8523a; background:transparent; padding:8px 16px; border-radius:999px; font-size:0.9rem; font-weight:600; transition:background .2s, color .2s;">Ver todas as recomendações no LinkedIn ↗</a>
     </div>
   </section>
 
@@ -426,8 +415,9 @@ class Component extends DCLogic {
   recs = [
     { quote: 'Criativa e com sólido conhecimento técnico, sempre trouxe para o produto que atuamos soluções fundamentadas em boas práticas de UI/UX.', name: 'Pedro Marafiga', role: 'Software Engineer · Compass UOL' },
     { quote: 'Tive o prazer de trabalhar com a Iza em um projeto desafiador de criação de agentes de IA, e ela fez toda a diferença no time.', name: 'Stheffani Garcia', role: 'UX Writer Sênior' },
-    { quote: 'Ela é uma profissional extremamente competente, organizada, comprometida e colaborativa, que combina muito bem criatividade, visão de produto e atenção à experiência do usuário.', name: 'Cláudio Menezes', role: 'AI Product Manager · supervisionou Izabella' },
+    { quote: 'Ela é uma profissional extremamente competente, organizada, comprometida e colaborativa, que combina muito bem criatividade, visão de produto e atenção à experiência do usuário.', name: 'Cláudio Menezes', role: 'AI Product Manager' },
     { quote: 'Sempre muito dedicada, proativa e empática, com uma preocupação genuína em entregar o melhor, muitas vezes indo além do que era esperado.', name: 'Marcos Rodrigo', role: 'AI Engineer' },
+    { quote: 'Em cada demanda que recebia, ela mergulhava no assunto, buscava referências e se dedicava a encontrar soluções que realmente agregassem valor ao produto.', name: 'Horiel Costa', role: 'Backend Developer' },
     { quote: 'Crescemos e aprendemos muito juntas, lidando com diversas situações de pressão e muita responsabilidade.', name: 'Aline Marçal Pimenta', role: 'Especialista em Produtos e Operações Internacionais' }
   ];
 
