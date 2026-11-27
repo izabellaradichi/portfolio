@@ -207,9 +207,9 @@
     <div style="max-width:1040px; margin:0 auto; padding:0 32px 40px; display:grid; gap:20px; justify-items:start;">
       <div data-rec-grid="1" style="display:grid; gap:16px; width:100%;">
           <sc-for list="{{ recs }}" as="r" hint-placeholder-count="4">
-            <figure style="margin:0; min-width:0; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; justify-content:space-between; gap:18px;">
+            <figure style="margin:0; min-width:0; background:#fffdfb; border:1px solid rgba(36,26,34,0.14); border-radius:8px; padding:18px 20px; display:grid; grid-row:span 2; grid-template-rows:subgrid; row-gap:18px; align-content:start;">
               <blockquote style="margin:0; font-family:'Work Sans', sans-serif; font-style:normal; font-weight:400; font-size:14px; line-height:1.55; letter-spacing:normal; color:#4a3f47; text-wrap:pretty;">“{{ r.quote }}”</blockquote>
-              <figcaption style="display:grid; gap:2px;">
+              <figcaption style="display:grid; gap:2px; align-self:start; align-content:start;">
                 <span style="font-size:0.9rem; font-weight:700; color:#241a22;">{{ r.name }}</span>
                 <span style="font-size:0.84rem; color:#6b5d66;">{{ r.role }}</span>
               </figcaption>
