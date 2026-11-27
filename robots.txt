@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://izabellaradichi.pages.dev/sitemap.xml
